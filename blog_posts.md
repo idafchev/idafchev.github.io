@@ -8,6 +8,5 @@ layout: default
 	<h4 class="post-title"><a href="{{ post.url | replace_first: '/', '' }}">{{ post.title }}</a></h4>
 	<p>{{ post.description }}</p>
 <!-- {% unless forloop.last %}<hr> % endunless %} -->
-	<hr>
 {% endfor %}
 </div>
