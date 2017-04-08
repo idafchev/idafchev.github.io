@@ -23,8 +23,16 @@
         <div id="title">
           <a href="/"><h1>{{ site.title | default: site.github.repository_name }}</h1></a>
           <p>{{ site.description | default: site.github.project_tagline }}</p>
-          <span class="what"><a href="{{ site.baseurl }}about">About</a></span>
-          <span class="what"><a href="{{ site.baseurl }}blog_posts">Blog Posts</a></span>
+          <ul class="nav-bar" style="width:100%;overflow:hidden;height:44px">
+            <li><a href="{{ site.baseurl }}">Home</a></li>
+            <li><a href="{{ site.baseurl }}about">About</a></li>
+            <li><a href="{{ site.baseurl }}blog_posts">Posts</a></li>
+          </ul>
+          <!--
+          <span><a href="{{ site.baseurl }}">Home  </a></span>
+          <span><a href="{{ site.baseurl }}about">About  </a></span>
+          <span><a href="{{ site.baseurl }}blog_posts">Posts  </a></span>
+          -->
           <hr>
           <span class="credits left">Maintained by <a href="{{ site.github.owner_url }}">Iliya Dafchev</a></span>
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
