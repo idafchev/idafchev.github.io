@@ -1,10 +1,8 @@
 ---
 layout: default
-title: Welcome!
 ---
-### Welcome to my blog
-
-### Posts so far
+{% assign post = site.posts.first %}
+<!--
 <div class="bloglist">
 {% for post in site.posts %}
 	<small>{{ post.date | date_to_string }}</small>
@@ -13,3 +11,4 @@ title: Welcome!
 {% unless forloop.last %}<hr />{% endunless %}
 {% endfor %}
 </div>
+-->
