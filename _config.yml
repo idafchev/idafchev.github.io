@@ -1,7 +1,7 @@
 theme: jekyll-theme-midnight
 title: Ring 0x00
 description: >
-Personal blog about cyber security, networking and technolgy in general
+  Personal blog about cyber security, networking and technolgy in general
 baseurl: ""
 show_downloads: false
 url: "https://idafchev.github.io"
