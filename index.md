@@ -2,7 +2,7 @@
 layout: default
 ---
 {% assign post = site.posts.first %}
-{{ post.content }}
+{{ post }}
 
 <!--
 <div class="bloglist">
