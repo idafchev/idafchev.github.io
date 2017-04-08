@@ -23,10 +23,10 @@
         <div id="title">
           <a href="/"><h1>{{ site.title | default: site.github.repository_name }}</h1></a>
           <p>{{ site.description | default: site.github.project_tagline }}</p>
-          <ul class="nav-bar" style="width:100%;overflow:hidden;height:44px">
-            <li><a href="{{ site.baseurl }}">Home</a></li>
-            <li><a href="{{ site.baseurl }}about">About</a></li>
-            <li><a href="{{ site.baseurl }}blog_posts">Posts</a></li>
+          <ul class="nav-bar" style="width:100%;overflow:hidden;">
+            <li style="display: inline"><a href="{{ site.baseurl }}">Home</a></li>
+            <li style="display: inline"><a href="{{ site.baseurl }}about">About</a></li>
+            <li style="display: inline"><a href="{{ site.baseurl }}blog_posts">Posts</a></li>
           </ul>
           <!--
           <span><a href="{{ site.baseurl }}">Home  </a></span>
