@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 ---
 {% assign post = site.posts.first %}
 {{ post.title | post.content }}
