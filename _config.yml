@@ -1,7 +1,8 @@
 theme: jekyll-theme-midnight
 title: Ring 0x00
-description: One ring to rule them all
-show_downloads: false
+description: >
+Personal blog about cyber security, networking and technolgy in general
 baseurl: ""
+show_downloads: false
 url: "https://idafchev.github.io"
 github_username:  idafchev
