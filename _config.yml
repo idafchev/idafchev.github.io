@@ -1,7 +1,7 @@
 theme: jekyll-theme-midnight
 title: Ring 0x00
 description: One ring to rule them all
-baseurl: ""
+baseurl: /
+url: https://idafchev.github.io
 show_downloads: false
-url: "https://idafchev.github.io"
 github_username:  idafchev
