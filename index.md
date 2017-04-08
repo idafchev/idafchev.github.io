@@ -5,7 +5,6 @@ title: Welcome!
 ### Welcome to my blog
 
 ### Posts so far
-
 <div class="bloglist">
 {% for post in site.posts %}
 	<small>{{ post.date | date_to_string }}</small>
