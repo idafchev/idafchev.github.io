@@ -2,6 +2,8 @@
 layout: default
 ---
 {% assign post = site.posts.first %}
+{{ post.content }}
+
 <!--
 <div class="bloglist">
 {% for post in site.posts %}
