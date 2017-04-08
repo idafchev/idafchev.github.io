@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+{% for post in site.posts limit:1 %}
 <div class="post">
     <h1 class="post-title">
       <a href="{{ post.url }}">
@@ -13,3 +13,5 @@ layout: default
 
     {{ post.content }}
 </div>
+{% endfor %}
+
