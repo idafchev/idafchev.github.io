@@ -2,7 +2,14 @@
 layout: default
 ---
 
-<div class="blog-index">  
-  {% assign post = site.posts.first %}
-  {% assign content = post.content %}
+<div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.content }}
 </div>
