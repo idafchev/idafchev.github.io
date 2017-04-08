@@ -35,10 +35,3 @@ title: Home
     <span class="pagination-item newer">Newer</span>
   {% endif %}
 </div>
-
-<!-- ---
-layout: post
----
-{% assign post = site.posts.first %}
-{{ post  }}
--->
