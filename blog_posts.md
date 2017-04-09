@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: page
+title: Blogging POSTS
 ---
 ### Blog Posts
 <div class="bloglist">
