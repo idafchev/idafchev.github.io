@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: page
+title: ABOUUT
 ---
 ### About Page
 About about
