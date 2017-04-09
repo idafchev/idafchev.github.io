@@ -16,7 +16,7 @@ cyan      #2aa198  strings, numbers
 green     #859900  operators, other keywords
 */
 
-.highlight { background-color: #000000; color: #0000 }
+.highlight { background-color: #002b36; color: #d0d0d0 }
 .highlight .lineno { color: #586e75 } /* Line Numbers */
 .highlight .c { color: #586e75 } /* Comment */
 .highlight .err { color: #93a1a1 } /* Error */
@@ -65,7 +65,7 @@ green     #859900  operators, other keywords
 .highlight .nt { color: #268bd2 } /* Name.Tag */
 .highlight .nv { color: #268bd2 } /* Name.Variable */
 .highlight .ow { color: #859900 } /* Operator.Word */
-.highlight .w { color: #93a1a1 } /* Text.Whitespace */
+.highlight .w { color: #d0d0d0 } /* Text.Whitespace */
 .highlight .mf { color: #2aa198 } /* Literal.Number.Float */
 .highlight .mh { color: #2aa198 } /* Literal.Number.Hex */
 .highlight .mi { color: #2aa198 } /* Literal.Number.Integer */
