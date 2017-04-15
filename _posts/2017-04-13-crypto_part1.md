@@ -261,12 +261,9 @@ Calculating the hamming distance is easy - just XOR the two strings/bytes and co
 
 ```python
 def hamming_distance(str1, str2):
-    result = bytearray( xor(str1, str2) )
-    cnt = 0
-    for byte in result:
-        cnt += bin(byte).count('1')
-    
-    return cnt
+    result = xor(str1, str2)
+  
+    return bin( int( result.encode('hex'), 16) ).count('1')
 ```
 
 To crack the key there are several steps:
