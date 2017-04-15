@@ -1,8 +1,7 @@
 ---
 layout: page
-title: Blogging POSTS
+title: Posts
 ---
-### Blog Posts
 <div class="bloglist">
 {% for post in site.posts %}
 	<small>{{ post.date | date_to_string }}</small>

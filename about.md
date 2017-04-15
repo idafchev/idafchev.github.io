@@ -1,6 +1,5 @@
 ---
 layout: page
-title: ABOUUT
+title: About
 ---
-### About Page
-About about
+### My name is Iliya Dafchev
