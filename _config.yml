@@ -1,6 +1,6 @@
 theme: jekyll-theme-midnight
 title: Ring 0x00
-description: One ring to rule them all
+description: A blog about information security, networking and technology
 baseurl: ""
 url: https://idafchev.github.io
 show_downloads: false
