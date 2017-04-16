@@ -6,6 +6,8 @@ url: https://idafchev.github.io
 show_downloads: false
 github_username:  idafchev
 #highlighter: rouge
+gems:
+  - jekyll-seo-tag
 markdown: kramdown
 kramdown:
   input: GFM
