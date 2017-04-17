@@ -1,5 +1,6 @@
 ---
 layout: default
+description: A blog about information security, networking and technology
 ---
 {% for post in site.posts limit:1 %}
 <div class="post">
