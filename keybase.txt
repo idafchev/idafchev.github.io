@@ -16,10 +16,10 @@ To do so, I am signing this object:
             "username": "idafchev"
         },
         "merkle_root": {
-            "ctime": 1497027871,
-            "hash": "e8deb1f0f5dea065228d74db21a8b625014930381e2761fa91d45cdece02a73639c27bf69b22676353ee683dd74f6c386944b4dc084840d87d7aad9fb7f92961",
-            "hash_meta": "e93a06a1f16e61e4d70934a77a340ad8ba83c29236d6e2f76ce8abe58e5bcf86",
-            "seqno": 1158172
+            "ctime": 1497027951,
+            "hash": "84e238a27dcb5d546a541a0e2824c1c1c11a9b1fc11545e7c5198bbacab8aa7d10e92a3422181d1e81558bf78b635445010c09a0092511830151b4cfa3fbc70b",
+            "hash_meta": "79caa0ab8e2c67836b59b720b4810be172119aa3e762d40c182a176655c32b5a",
+            "seqno": 1158177
         },
         "service": {
             "hostname": "idafchev.github.io",
@@ -32,10 +32,10 @@ To do so, I am signing this object:
         "name": "keybase.io go client",
         "version": "1.0.24"
     },
-    "ctime": 1497027879,
+    "ctime": 1497027955,
     "expire_in": 504576000,
-    "prev": "e14354eb58e5d06278a0ddf728704d51d67f81d459c5942cfc4f5569bb88c5a1",
-    "seqno": 18,
+    "prev": "fa71d749c7745e07e80b36fc09d961f7bb975ec3fe64150269331411344243a6",
+    "seqno": 19,
     "tag": "signature"
 }
 
