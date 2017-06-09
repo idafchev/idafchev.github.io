@@ -179,6 +179,9 @@ Now we need to construct the array of those arguments. Remember that it also has
   mov ecx, esp ; Now ecx points to the beginning of the array ['/bin//nc', '-lp8080', '-e/bin/sh']
 ```
 
+The stack should look like this:
+![stack](/images/stack.png)
+
 So *ebx*{: style="color: LightGreen"} already points to the *filename*{: style="color: LightGreen"} */bin//nc*{: style="color: LightSalmon"},
 *ecx*{: style="color: LightGreen"} points to the array with the arguments and *edx*{: style="color: LightGreen"} is null, 
 ready to be used as *envp[]*{: style="color: LightGreen"}. The only thing left is to load the *execve*{: style="color: LightGreen"} system call number
