@@ -1,0 +1,49 @@
+I hereby claim:
+
+  * I am Iliya Dafchev on github
+  * I am idafchev (https://keybase.io/idafchev) on keybase.
+  * I have a public key with fingerprint 22BB 787C A61E C578 DA82 EA33 C59C 94FE 631A 5C99
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01204652f3ca46d44c2acd32b572bd3e2d8d2ff706f85272582052160b88cc999b610a",
+            "host": "keybase.io",
+            "kid": "01204652f3ca46d44c2acd32b572bd3e2d8d2ff706f85272582052160b88cc999b610a",
+            "uid": "3a599b9ae425d0ad3ad24e6715769c19",
+            "username": "idafchev"
+        },
+        "merkle_root": {
+            "ctime": 1497025945,
+            "hash": "b4c75056f553b911bf0e742e5f764b1baab18d754be62cdcc3dec73ce70691988a484095af3a841d9a6fb9b29d7f609e5f0c602671fb6aaa641210aebb04abf6",
+            "hash_meta": "c95c228e227f6c4c7884b5a688dd881132696096e8d043e28b74f8d1530cecb8",
+            "seqno": 1158090
+        },
+        "service": {
+            "hostname": "idafchev.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.24"
+    },
+    "ctime": 1497025948,
+    "expire_in": 504576000,
+    "prev": "e04981ea7bb418a4028ea42fa8e3a6afd280679a1a8fd0efe9bcf3bbca412790",
+    "seqno": 12,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgRlLzykbUTCrNMrVyvT4tjS/3BvhSclggUhYLiMyZm2EKp3BheWxvYWTFA0t7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNDY1MmYzY2E0NmQ0NGMyYWNkMzJiNTcyYmQzZTJkOGQyZmY3MDZmODUyNzI1ODIwNTIxNjBiODhjYzk5OWI2MTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNDY1MmYzY2E0NmQ0NGMyYWNkMzJiNTcyYmQzZTJkOGQyZmY3MDZmODUyNzI1ODIwNTIxNjBiODhjYzk5OWI2MTBhIiwidWlkIjoiM2E1OTliOWFlNDI1ZDBhZDNhZDI0ZTY3MTU3NjljMTkiLCJ1c2VybmFtZSI6ImlkYWZjaGV2In0sIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDk3MDI1OTQ1LCJoYXNoIjoiYjRjNzUwNTZmNTUzYjkxMWJmMGU3NDJlNWY3NjRiMWJhYWIxOGQ3NTRiZTYyY2RjYzNkZWM3M2NlNzA2OTE5ODhhNDg0MDk1YWYzYTg0MWQ5YTZmYjliMjlkN2Y2MDllNWYwYzYwMjY3MWZiNmFhYTY0MTIxMGFlYmIwNGFiZjYiLCJoYXNoX21ldGEiOiJjOTVjMjI4ZTIyN2Y2YzRjNzg4NGI1YTY4OGRkODgxMTMyNjk2MDk2ZThkMDQzZTI4Yjc0ZjhkMTUzMGNlY2I4Iiwic2Vxbm8iOjExNTgwOTB9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoiaWRhZmNoZXYuZ2l0aHViLmlvIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMjQifSwiY3RpbWUiOjE0OTcwMjU5NDgsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJwcmV2IjoiZTA0OTgxZWE3YmI0MThhNDAyOGVhNDJmYThlM2E2YWZkMjgwNjc5YTFhOGZkMGVmZTliY2YzYmJjYTQxMjc5MCIsInNlcW5vIjoxMiwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEDklyOClOn1MxJuFAWA6qGT5EZ/aGDYOf1+p+jYdMrTFikyXqQBx7CltVv9ACKiELG3B61Fakv2omFdh2vCBRYMqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgsTDsKfTP5JUib1HmAIm5FZ4EfbM6j725BCQyOBJdiZ6jdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this github account and blog by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/idafchev
