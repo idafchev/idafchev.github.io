@@ -2,4 +2,4 @@
 layout: page
 title: About
 ---
-### My name is Iliya Dafchev
+### Just a guy interested in infosec
