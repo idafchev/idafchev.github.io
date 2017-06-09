@@ -60,7 +60,7 @@ The user id of root is zero:
 
 ### Pushing strings on the stack
 
-The stack grows from high memory addresses to low memory addresses, but reading strings from the stack is done from low to high addresses. This means that the 
+The stack grows from high memory addresses to low memory addresses and Intel CPUs are little endian, so effectively the strings are stored onto the stack in reverse (the most significat byte is at a lower address and the least significat - at higher address). This means that the 
 bytes of a string must be pushed in reversed order.
 
 ## Writing the shellcode
