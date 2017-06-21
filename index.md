@@ -16,6 +16,7 @@ title: Home
     {{ post.content }}
 </div>
 {% endfor %}
+  
   <div id="disqus_thread"></div>
     <script>
       var disqus_config = function () {
