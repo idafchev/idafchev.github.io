@@ -19,8 +19,8 @@ title: Home
 <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
-this.page.url = '{{ site.url }}{{ page.url }}';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = '{{ page.id }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = '{{ post.url }}';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = '{{ post.url }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
