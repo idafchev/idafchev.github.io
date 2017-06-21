@@ -15,7 +15,7 @@ title: Home
 
     {{ post.content }}
 </div>
-  <div id="disqus_thread"></div>
+<div id="disqus_thread"></div>
     <script>
       var disqus_config = function () {
       this.page.url = '{{ site.url }}{{ page.url }}';  // Replace PAGE_URL with your page's canonical URL variable
