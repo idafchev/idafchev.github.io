@@ -2,7 +2,7 @@ theme: jekyll-theme-midnight
 title: Ring 0x00
 description: A blog about information security, networking and technology. By Iliya Dafchev.
 baseurl: ""
-url: https://idafchev.github.io
+url: "https://idafchev.github.io"
 show_downloads: false
 google_verify: cW4TLH1bfeLvBJnTMoroLoGm6POKJdKgoyIgt8hQHfI
 github_username:  idafchev
