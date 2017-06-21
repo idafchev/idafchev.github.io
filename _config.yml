@@ -4,6 +4,8 @@ description: A blog about information security, networking and technology. By Il
 baseurl: ""
 url: "https://idafchev.github.io"
 show_downloads: false
+disqus:
+  shortname: idafchev
 google_verify: cW4TLH1bfeLvBJnTMoroLoGm6POKJdKgoyIgt8hQHfI
 github_username:  idafchev
 #highlighter: rouge
