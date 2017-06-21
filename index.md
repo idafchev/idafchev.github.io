@@ -15,8 +15,6 @@ title: Home
 
     {{ post.content }}
 </div>
-{% endfor %}
-  
   <div id="disqus_thread"></div>
     <script>
       var disqus_config = function () {
@@ -32,3 +30,4 @@ title: Home
       })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endfor %}
