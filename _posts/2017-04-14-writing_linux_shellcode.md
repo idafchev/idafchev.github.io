@@ -28,6 +28,19 @@ it would still be executed as the user that started it. If the owner is root we'
 The Linux x86-32 syscall calling convention is the following:  
 The *eax*{: style="color: LightGreen"} register stores the syscall number and you can pass a maximum of 6 arguments to the syscall using the registers *ebx*{: style="color: LightGreen"}, *ecx*{: style="color: LightGreen"}, *edx*{: style="color: LightGreen"}, *esi*{: style="color: LightGreen"}, *edi*{: style="color: LightGreen"} and *ebp*{: style="color: LightGreen"} in that order. The return value of the syscall is stored in *eax*{: style="color: LightGreen"}. If you need to pass more than 6 arguments, you'll have to store them in a struct and store a pointer to that structure in a register.
 
+```c
+// example system call
+int syscall(int arg1, int arg2, int arg3, int arg4, int arg5);
+
+// For the above system call, the registers should be set with the values shown below
+eax = syscall number
+ebx = arg1
+ecx = arg2
+edx = arg3
+esi = arg4
+edi = arg5
+```
+
 And one last thing - arrays and strings have to be null terminated.  
 
 ### The execve system call:
