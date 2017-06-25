@@ -15,7 +15,7 @@ This post is heavily influenced by these two tutorials and I highly recommend to
 1. [Demystifying the execve shellcode (Stack Method)](http://hackoftheday.securitytube.net/2013/04/demystifying-execve-shellcode-stack.html) at hackoftheday.securitytube.net
 2. [Writing my first shellcode - iptables -P INPUT ACCEPT](https://0day.work/writing-my-first-shellcode-iptables-p-input-accept/)  at 0day.work
 
-The shellcode in this tutorial is a port binding shellcode for *x86 32bit architecture*{: style="color: LightSalmon" :.underline}. It runs the command  
+The shellcode in this tutorial is a port binding shellcode for *x86 32bit architecture*{: style="color: LightSalmon" ;:.underline}. It runs the command  
 *nc -lp8080 -e/bin/sh*{: style="color: LightGreen"}, which creates a listening socket,
 binds it to port 8080 and starts a shell with its input and output redirected via the network socket. There are different versions of netcat
 and some of them don't have the *-e*{: style="color: LightGreen"} switch, so this shellcode won't work on every system. 
@@ -25,7 +25,10 @@ linux has the *setuid*{: style="color: LightGreen"} bit set (chmod u+s or chmod 
 it can be executed with the privileges of the file owner. For this to happen the program must make use of the *setuid*{: style="color: LightGreen"} system call, otherwise
 it would still be executed as the user that started it. If the owner is root we'll gain a root shell. The *execve*{: style="color: LightGreen"} syscall executes a program.
 
-To call a system call in assembly, the arguments for the syscall are stored in the registers. Also arrays and strings need to be null terminated.  
+The Linux x86-32 syscall calling convention is the following:
+The *eax*{: style="color: LightGreen"} register stores the syscall number and you can pass a maximum of 6 arguments to the syscall using the registers *ebx*{: style="color: LightGreen"}, *ecx*{: style="color: LightGreen"}, *edx*{: style="color: LightGreen"}, *esi*{: style="color: LightGreen"}, *edi*{: style="color: LightGreen"} and *ebp*{: style="color: LightGreen"} in that order. The return value of the syscall is stored in *eax*{: style="color: LightGreen"}. If you need to pass more than 6 arguments, you'll have to store them in a struct and store a pointer to that structure in a register.
+
+And one last thing - arrays and strings have to be null terminated.  
 
 ### The execve system call:
 ```c
@@ -36,7 +39,7 @@ int execve(const char *filename, char *const argv[], char *const envp[]);
 The first argument (*argv[0]*{: style="color: LightGreen"}) must be equal to *filename*{: style="color: LightGreen"}.   
 *envp[]*{: style="color: LightGreen"} - pointer to an array containing additinal environment options. Won't be used here.
 
-These pointers will be stored in the registers prior to calling the syscall.  
+These pointers will be stored in the registers prior to calling the syscall:  
 *eax*{: style="color: LightGreen"} will store the *syscall number*{: style="color: LightGreen"}  
 *ebx*{: style="color: LightGreen"} will store pointer to the first argument (*filename*{: style="color: LightGreen"})  
 *ecx*{: style="color: LightGreen"} will store pointer to the second argument (*argv[]*{: style="color: LightGreen"})   
