@@ -25,7 +25,7 @@ linux has the *setuid*{: style="color: LightGreen"} bit set (chmod u+s or chmod 
 it can be executed with the privileges of the file owner. For this to happen the program must make use of the *setuid*{: style="color: LightGreen"} system call, otherwise
 it would still be executed as the user that started it. If the owner is root we'll gain a root shell. The *execve*{: style="color: LightGreen"} syscall executes a program.
 
-The Linux x86-32 syscall calling convention is the following:
+The Linux x86-32 syscall calling convention is the following:  
 The *eax*{: style="color: LightGreen"} register stores the syscall number and you can pass a maximum of 6 arguments to the syscall using the registers *ebx*{: style="color: LightGreen"}, *ecx*{: style="color: LightGreen"}, *edx*{: style="color: LightGreen"}, *esi*{: style="color: LightGreen"}, *edi*{: style="color: LightGreen"} and *ebp*{: style="color: LightGreen"} in that order. The return value of the syscall is stored in *eax*{: style="color: LightGreen"}. If you need to pass more than 6 arguments, you'll have to store them in a struct and store a pointer to that structure in a register.
 
 And one last thing - arrays and strings have to be null terminated.  
