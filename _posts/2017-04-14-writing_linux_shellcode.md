@@ -15,7 +15,7 @@ This post is heavily influenced by these two tutorials and I highly recommend to
 1. [Demystifying the execve shellcode (Stack Method)](http://hackoftheday.securitytube.net/2013/04/demystifying-execve-shellcode-stack.html) at hackoftheday.securitytube.net
 2. [Writing my first shellcode - iptables -P INPUT ACCEPT](https://0day.work/writing-my-first-shellcode-iptables-p-input-accept/)  at 0day.work
 
-The shellcode in this tutorial is a port binding shellcode for *x86 32bit architecture*{: style="color: LightSalmon" ;:.underline}. It runs the command  
+The shellcode in this tutorial is a port binding shellcode for *x86 32bit architecture*{: style="color: LightSalmon"}. It runs the command  
 *nc -lp8080 -e/bin/sh*{: style="color: LightGreen"}, which creates a listening socket,
 binds it to port 8080 and starts a shell with its input and output redirected via the network socket. There are different versions of netcat
 and some of them don't have the *-e*{: style="color: LightGreen"} switch, so this shellcode won't work on every system. 
