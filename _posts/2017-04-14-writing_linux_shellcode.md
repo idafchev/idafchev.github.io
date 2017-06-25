@@ -274,6 +274,7 @@ There are no null bytes. What's left is to extract the opcodes. You could do thi
 ```bash
 root@kali:~# for i in `objdump -d shellcode-c137 | tr '\t' ' ' | tr ' ' '\n' | egrep '^[0-9a-f]{2}$' ` ; do echo -n "\x$i" ; done
 ```
+It takes the output of *objdump -d shellcode-c137*{: style="color: LightGreen"}, then replaces tabs with spaces, then replaces spaces with newlines and gets only the lines consisting of hex values. It loops through the hex values prepending \x and prints them.
 
 And the resulting shellcode is:
 ```
