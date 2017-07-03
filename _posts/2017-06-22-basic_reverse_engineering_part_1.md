@@ -980,6 +980,6 @@ Password: 55222
 Password OK!
 ```
 
-crackme0x07 to crackme0x09 looked almost the same so I skipped them.
+I'll leave crackme0x07 to crackme0x09. They are almost the same, but stripped.
 
 That's it for part 0x00. Part 0x01 will be about the "bombs" challenges from the "Extended Reverse Engineering" class.
