@@ -4,7 +4,7 @@ title: Contact
 ---
 ### You can contact me at &#105;&#100;&#097;&#102;&#099;&#104;&#101;&#118;(&#052;&#116;)&#109;&#097;&#105;&#108;(&#100;&#111;&#116;)&#098;&#103;
 
-twitter: @IliyaDafchev
+twitter: @IliyaDafchev  
 keybase: keybase.io/idafchev
 
 My public PGP key:
