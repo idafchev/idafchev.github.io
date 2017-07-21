@@ -474,7 +474,7 @@ C:\Users\\<username\>\AppData\Local\Temp\xxxx.tmp \\.\pipe\{GUID}
 I guess the resource is the named pipe client, but I won't be analysing it now. At the end of the function the thread is closed and the temporary file gets deleted.
 
 # Copy Resource 3
-After resource 1 or 2, the third resource is loaded, decompressed and written to "*C:\Windows*{: style="color: LightSalmon"}" directory with filename "*dllhost.dat*{: style="color: LightSalmon"}".
+After resource 1 or 2, the third resource is loaded, decompressed and written to "*C:\Windows*{: style="color: LightSalmon"}" directory with filename "*dllhost.dat*{: style="color: LightSalmon"}".  
 ![petya_033](/images/petya/petya_033.png)
 
 # admin$ share
