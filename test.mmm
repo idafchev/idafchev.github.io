@@ -1,0 +1,23 @@
+dd if=/dev/zero of=/some/dir/test.img bs=1M count=2048
+
+sudo virt-install --connect qemu:///system -n testvm --description "test vm" --os-type=Linux --os-variant=centos7.0 --ram=1024 --vcpus=1 --disk path=/media/windows_d_drive/Programs/Linux/kvm_vms/test.img,bus=virtio,size=2 --graphics vnc --cdrom "/media/windows_d_drive/ISOs and VMs/CentOS-7-x86_64-Minimal-1511.iso" --network network=default
+
+create virtual network that is a SUBNET of the LAN. (routed to wlp8s0)
+
+sudo sysctl net.ipv4.conf.wlp8s0.proxy_arp=1
+
+sudo arp -i wlp8s0 -Ds 192.168.0.100 wlp8s0 pub (proxy arp)
+
+/etc/sysconfig/network-scripts/ifcfg-eth0
+TYPE=Ethernet
+BOOTPROTO=static
+IPADDR=192.168.0.186
+NETMASK=255.255.255.224
+GATEWAY=192.168.0.161
+DNS1=192.168.0.161
+DEFROUTE=yes
+PEERROUTES=yes
+NAME=eth0
+UUID=<uuid>
+DEVICE=eth0
+ONBOOT=yes
