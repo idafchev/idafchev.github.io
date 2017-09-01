@@ -1,4 +1,5 @@
 dd if=/dev/zero of=/some/dir/test.img bs=1M count=2048
+qemu-img create -f qcow2 test3.qcow2 2000M
 
 sudo virt-install --connect qemu:///system -n testvm --description "test vm" --os-type=Linux --os-variant=centos7.0 --ram=1024 --vcpus=1 --disk path=/media/windows_d_drive/Programs/Linux/kvm_vms/test.img,bus=virtio,size=2 --graphics vnc --cdrom "/media/windows_d_drive/ISOs and VMs/CentOS-7-x86_64-Minimal-1511.iso" --network network=default
 
