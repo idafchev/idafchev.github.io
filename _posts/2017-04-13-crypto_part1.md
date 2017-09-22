@@ -334,17 +334,17 @@ the correct plaintext. That's why it's necessary to have a long message (longer 
 
 ![xor05](/images/crypto_xor/xor05.png)
 
-1. I take every possible one-byte key for a single block and test if it produces ascii printable output. If it does, I store it in a list (that way I filter out may invalid keys). There is one such list for every block, which contains the keys that produce printable output.
+1) I take every possible one-byte key for a single block and test if it produces ascii printable output. If it does, I store it in a list (that way I filter out may invalid keys). There is one such list for every block, which contains the keys that produce printable output.
 
 block1: keys[a,b,c,d]  
 block2: keys[1,2,3]  
 block3: keys[w,x,y,z]  
 
-2. Then I store all those lists in another list. This list now contains all possible one-byte keys for every block. 
+2) Then I store all those lists in another list. This list now contains all possible one-byte keys for every block. 
 
 list: [ [a,b,c,d], [1,2,3], [w,x,y,z] ]  
 
-3. After that I generate all possible combinations of the collected single-byte keys (with key length as returned from find_xor_keysize) using that list.
+3) After that I generate all possible combinations of the collected single-byte keys (with key length as returned from find_xor_keysize) using that list.
 
 a1w  
 a1x  
@@ -352,15 +352,15 @@ a1y
 a1z  
 a2w  
 a2x  
-and so on...
+and so on...  
 
-4. Try every one of the produced multi-byte keys against the whole ciphertext, and test if the output is an english text.
+4) Try every one of the produced multi-byte keys against the whole ciphertext, and test if the output is an english text.
 
-ciphertext
-xor
-a1wa1wa1wa
-=
-output
+ciphertext  
+xor  
+a1wa1wa1wa  
+=  
+output  
 
 test if output is english text
 
