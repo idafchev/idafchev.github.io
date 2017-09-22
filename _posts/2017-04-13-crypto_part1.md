@@ -6,19 +6,24 @@ description: "The first part of a series of posts about encryption."
 title:  "Crypto - Part 1. Breaking XOR Encryption."
 ---
 
-## Introduction
-In the Crypto series of posts I'll try to explain different encryption algorithms, implement them in code and then try to break them. 
+# Introduction
+In the Crypto series of posts I'll try to explain different encryption algorithms, implement them in code and then try to break them. They're also writeups for the [cryptopals](http://cryptopals.com/) crypto challenges and I recommend trying to solve them youtself before reading this and other crypto posts.
 
-I'm not a cryptographer, nor  am I an expert in programming! The purpose of these posts (and the blog in general) is for me to write down what I've learned so it can be useful to others (and for others to point out my mistakes).
+I'm not a cryptographer, nor  am I an expert in programming! The purpose of these posts (and the blog in general) is for me to write down what I've learned so it can be useful to others (and for others to point out my mistakes!).
 
-## Single-byte XOR cipher
-This cipher XORs every byte of the plaintext with the same one-byte key. For example:  
+# Single-byte XOR cipher
+This cipher applies the XOR operation on every byte of the plaintext with the same one-byte key. For example:  
 key = 'k' ; plaintext = 'plaintext' ; ciphertext = kkkkkkkkk XOR plaintext
+
+![xor01](/images/crypto_xor/xor01.png)
 
 And to decrypt the message XOR every byte of the ciphertext with the key:  
 key = 'k' ; plaintext = kkkkkkkkk XOR ciphertext
 
+![xor02](/images/crypto_xor/xor02.png)
+
 Below is a function that does XOR of two strings of equal length:  
+
 ```python
 def xor(str1, str2):
     if len(str1) != len(str2):
@@ -41,11 +46,11 @@ def single_byte_xor(plaintext, key):
     return xor(plaintext, key*len(plaintext))
 ```
 
-## Break the single-byte XOR cipher
-It's a substitution cipher, so it's vulnerable to frequency analysis and because the key is only one byte it's also easy to bruteforce (there are only 256 possible keys...).  
+# Break the single-byte XOR cipher
+This cipher is essentialy a substitution cipher, so it's vulnerable to frequency analysis and because the key is only one byte it's also easy to bruteforce (there are only 256 possible keys...).  
 The frequency analysis is suitable for longer messages, so I'll implement only the bruteforce method which always works regardless of the message length.  
 
-But first, how do we know if the decrypted message is the actual plaintext? If the plaintext is written in english, we need a way to test if a given string is an english text.
+But when we try every one of the 256 possible keys, how do we know that the produced output is the actual plaintext? If the plaintext is written in english, we need a way to test if a given string is an english text.
 
 To decide wether a string is an english text I'll use some the following rules:  
 1. The string contains only ascii printable characters  
@@ -54,9 +59,9 @@ To decide wether a string is an english text I'll use some the following rules:
 4. The digraphs cj, fq, gx, hx, jf, jq, jx, jz, qb, qc, qj, qk, qx, qz, sx, vf, vj, vq, vx, wx, xj, zx never occur in english words  
 5. Punctuation makes up to 2%-3% of the text (for short messages up to 10%).  
 6. Has at least one vowel (every word should have at least one vowel) 
-8. Around 80%-90% or more of the text should be made up of english letters
+7. Around 80%-90% or more of the text should be made up of letters
 
-I found the digraphs using the following script and [this](https://github.com/dwyl/english-words/blob/master/words.txt) dictionary which contains 355k english words.    
+I found the digraphs using the following script and [this dictionary](https://github.com/dwyl/english-words/blob/master/words.txt) which contains 355k english words.    
 ```python
 import string, itertools
 
@@ -73,7 +78,7 @@ for digraph in itertools.product(string.lowercase, repeat=2):
 print "Digraphs: ", digraphs
 ```
 
-For the punctuation statistic similar script was used and a 1000 page ebook, that I converted to txt.  
+For the punctuation statistic similar script was used and a 1000 page ebook.  
 ```python
 import string
 
@@ -89,6 +94,7 @@ print "Punctuation makes up %f %% of the text!" % ( float(cnt)*100/len(file) )
 ```
 
 And below is the code I wrote that checks if a given string is an english text, by using the rules mentioned above. It's not perfect but most of the time works well enough.  
+
 ```python
 import string
 
@@ -183,6 +189,7 @@ def is_english( input_text ):
 ```
 
 Now we are ready to construct the bruteforce function.
+
 ```python
 def break_single_byte_xor( ciphertext ):
     keys = []
@@ -201,6 +208,7 @@ def break_single_byte_xor( ciphertext ):
 ```
 
 Lets test it!
+
 ```python
 msg = 'This is a very secret message!'
 key = '\x0f'
@@ -215,11 +223,14 @@ The output is:
 Keys:  ['\x0f']  
 Plaintexts:  ['This is a very secret message!']  
 
-## Repeating-key XOR cipher
+# Repeating-key XOR cipher
 This cipher uses a key that is more than one byte long. The key is repeated until it matches the length of the message.  
 For example: key='secret' ; plaintext = 'plaintext' ; ciphertext = secretsec XOR plaintext
 
+![xor03](/images/crypto_xor/xor03.png)
+
 Here is the implementation:  
+
 ```python
 def repeating_key_xor(plaintext, key):
     if len(key) == 0 or len(key) > len(plaintext):
@@ -238,7 +249,7 @@ def repeating_key_xor(plaintext, key):
     return str(ciphertext_bytes)
 ```
 
-## Breaking the repeating-key XOR cipher
+# Breaking the repeating-key XOR cipher
 This one is trickier. There are mainly two steps here:
 1. Find the key size
 2. Crack the key
@@ -273,22 +284,14 @@ To crack the key there are several steps:
 4. Crack the single-byte key for each of the transposed blocks.
 5. All bytes taken together produce the key 
 
-Lets illustrate step 2. Encrypting the plaintext 'my_secret_message!' with a key 'key' would be equal to the XOR of the following strings:
+Lets illustrate those steps:
 
-keykeykeykeykeykey  
-my_secret_message!  
-
-Every 4th byte of the message is XORed with the same byte from the key!
-
-k__k__k__k__k__k  
-my_secret_message! 
-
-kkkkkk  
-msr sg  
+![xor04](/images/crypto_xor/xor04.png)
 
 By now I hope you see how this method works :)
 
 Here is the function I wrote for finding the probable key length:
+
 ```python
 def find_xor_keysize( ciphertext, hamming_blocks, minsize=2, maxsize=10 ):
     hamming_dict = {} # <keysize> : <hamming distance>
@@ -327,35 +330,39 @@ def find_xor_keysize( ciphertext, hamming_blocks, minsize=2, maxsize=10 ):
 
 The cracking step turns out to be a little harder. The transposed blocks are every n-th character of the ciphertext
 and so their corresponding plaintext isn't composed of english words. This makes it harder to distinguish which one-byte key produces
-the correct plaintext. That's why it's necessary to have a long message to be able to use statistical methods on the transposed blocks.
+the correct plaintext. That's why it's necessary to have a long message (longer message -> longer blocks) to be able to use statistical methods on the transposed blocks.
 
-I take every possible one-byte key for a single block and store them in a list. There is one such list for every block.
-Then I store all those lists in another list. This list now contains all possible one-byte keys for every block. 
+![xor05](/images/crypto_xor/xor05.png)
 
-After that I generate all possible multi-byte keys (with key length as returned from find_xor_keysize) using this list.
-Here is an example. Each block has a number of possible single-byte keys:  
+1. I take every possible one-byte key for a single block and test if it produces ascii printable output. If it does, I store it in a list (that way I filter out may invalid keys). There is one such list for every block, which contains the keys that produce printable output.
+
 block1: keys[a,b,c,d]  
 block2: keys[1,2,3]  
 block3: keys[w,x,y,z]  
 
-The single-byte keys for each block are stored in a list:  
+2. Then I store all those lists in another list. This list now contains all possible one-byte keys for every block. 
+
 list: [ [a,b,c,d], [1,2,3], [w,x,y,z] ]  
 
-Generate all possible multi-byte keys using this list:  
+3. After that I generate all possible combinations of the collected single-byte keys (with key length as returned from find_xor_keysize) using that list.
+
 a1w  
 a1x  
 a1y  
 a1z  
 a2w  
 a2x  
-...  
+and so on...
 
-Then I try to decrypt the ciphertext with each of those keys and use the is_english function to determine if the output is correct.
+4. Try every one of the produced multi-byte keys against the whole ciphertext, and test if the output is an english text.
 
-Note: If you do the math, you'll see there might be millions or billions of key combinations. For 4 blocks and 256 possible keys for every block,
-that is 256^4 = 4 294 967 296 possible multi-byte keys!!! That's why I filter some of the one-byte keys by using statistical methods hence the need for long message.
-The probability every n-th byte to be a punctuation sign is very low. Also most of the text should be english letters. We shold be very
-unlucky if a transposed happens to consist of only non-letter characters, because most of the text is letters and spaces.
+ciphertext
+xor
+a1wa1wa1wa
+=
+output
+
+test if output is english text
 
 ```python
 import itertools
