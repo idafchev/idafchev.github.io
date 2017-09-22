@@ -13,7 +13,7 @@ You can find the source code [here](https://github.com/idafchev/stego_http).
 For those who are not familiar, steganography is (as described in wikipedia) "the practice of concealing a file, message, image, or video within another file, message, image, or video.". So it's not only for hiding data in images.
 
 The way my PoC works is the following:  
-- The secret message is a text and is converted to binary format  
+- The secret message is a text which is converted to binary format  
 - The 1s are encoded as double space and 0s as single space  
 - The spaces in the HTTP headers of the request are replaced with double space (1) or single space(0) (no change), depending on the current bit of the binary message  
 - If the message is too long, multiple HTTP requests are sent  
