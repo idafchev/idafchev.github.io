@@ -6,7 +6,7 @@ description: "A PoC for hiding data in HTTP headers."
 title:  "HTTP Steganography PoC"
 ---
 
-I wrote a proof of concept for hiding and transfering data in the HTTP headers. I don't know if it's a unique idea (probably not), but it's an interesting one and I wanted to implement it. In this post I'm going to explain my idea, how it could be used and improved.
+I wrote a proof of concept for hiding and transfering data in the HTTP headers. I don't know if it's a unique idea (probably not), but I think it's an interesting one (although not very efficient) and I wanted to implement it.
 
 You can find the source code [here](https://github.com/idafchev/stego_http).
 
@@ -25,7 +25,7 @@ header:\_\_value\r\n
 I do  
 header:\_value\_\_\r\n  
 
-There aren't many spaces in the HTTP requests and headers, so the capacity (number of bits I could hide in a request) and throughput are really low. For my tests I used every header I thought of to maximize the capacity of the request (also, the longer the 'user-agent' header is, the better). Even so, the message "This is a very secret message!", needed 7 requests to be sent! It's obvious you couldn't use this to transfer even small files. Not only it's going to be sloooow, but the sysadmins will definately notice the large HTTP traffic coming from the machine. 
+There aren't many spaces in the HTTP requests and headers, so the capacity (number of bits I could hide in a request) and throughput are really low. For my tests I used every header I could think of to maximize the capacity of the request (also, the longer the 'user-agent' header is, the better). Even so, the message "This is a very secret message!", needed 7 requests to be sent! It's obvious you couldn't use this to transfer even small files. Not only it's going to be sloooow, but the sysadmins will definately notice the large HTTP traffic coming from the machine. 
 
 I think this technique is good only for malware C&C communication.
 
@@ -69,7 +69,7 @@ accept-charset: utf-8, iso-8859-1;q=0.5,  *;q=0.1
 ```
 The idea was that the traffic should look as real HTTP traffic as it can. The current PoC only sends predefined GET requests.
 
-My PoC could be improved alot and make the traffic look as legitimate HTTP traffic as possible. For example the traffic could be predefined such that it simulates normal user activity. The server returns a real page, then other requests are sent to download the files and pictures from that page, after that other resources are requested from the site as if a real user is browsing it. All those requests can carry hidden data, and server responses could also hide data, not only in the headers but in the body (webpage source) too. The website should be non-malicious and look legitimate.
+My PoC could be improved alot and make the traffic look as legitimate HTTP traffic as possible. For example the traffic could be predefined such that it simulates normal user activity. The server returns a real page, then other requests are sent to download the files and pictures from that page, after that other resources are requested from the site as if a real user is browsing it. All those requests can carry hidden data, and server responses could also hide data, not only in the headers but in the body (webpage source) too.
 
 This technique could be made ineffective with http traffic normalization and anomaly detection.
 
