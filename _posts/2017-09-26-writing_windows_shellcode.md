@@ -514,7 +514,7 @@ int main()
 }
 ```
 
-To run it successfully in Visual Studio, you'll have to compile it with some protections disabled:
+To run it successfully in Visual Studio, you'll have to compile it with some protections disabled:  
 Security Check: Disabled (/GS-)  
 Data Execution Prevention (DEP): No
 
