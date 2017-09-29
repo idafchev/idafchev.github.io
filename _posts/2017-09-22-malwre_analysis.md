@@ -4,6 +4,7 @@ date:   2017-09-22 09:12:01 -0600
 categories: malware_analysis
 description: "I think the title is self-explanatory."
 title:  "Analysis of a Trojan downloader"
+author: "Iliya Dafchev"
 ---
 
 # Table of contents
