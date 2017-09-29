@@ -4,6 +4,7 @@ date:   2017-04-13 15:12:01 -0600
 categories: crypto
 description: "The first part of a series of posts about encryption."
 title:  "Crypto - Part 1. Breaking XOR Encryption."
+author: "Iliya Dafchev"
 ---
 
 # Introduction
