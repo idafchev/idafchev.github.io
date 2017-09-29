@@ -4,6 +4,7 @@ date:   2017-07-21 09:12:01 -0600
 categories: writeup
 description: "Analysis of the Petya/NotPetya ransomware."
 title:  "Petya/NotPetya Ransomware Analysis"
+author: "Iliya Dafchev"
 ---
 
 I got the sample from [theZoo](https://github.com/ytisf/theZoo). I don't know if this is an actual sample caught "in the wild", but for my surprise it wasn't packed or had any advanced anti-RE tricks. I guess ransomware writers just want a quick profit. 
