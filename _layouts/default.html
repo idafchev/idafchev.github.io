@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
   <head>
-     {% seo %}
     {% if site.google_verify %}
     <meta name="google-site-verification" content="{{ site.google_verify }}" />
     {% endif %}
@@ -18,7 +17,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+  {% seo %}
   </head>
   <body>
     
