@@ -4,6 +4,7 @@ date:   2017-06-30 15:12:01 -0600
 categories: writeups
 description: "Cmubomb challenge writeup from the Modern Binary Exploitation course."
 title:  "Basic Reverse Engineering (writeup) - Part 0x02"
+author: "Iliya Dafchev"
 ---
 
 # Introduction
