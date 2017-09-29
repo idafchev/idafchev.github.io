@@ -4,6 +4,7 @@ date:   2017-06-26 15:12:01 -0600
 categories: writeups
 description: "Bomb challenge writeup from the Modern Binary Exploitation course."
 title:  "Basic Reverse Engineering (writeup) - Part 0x01"
+author: "Iliya Dafchev"
 ---
 
 # Introduction
