@@ -4,6 +4,7 @@ date:   2017-06-22 15:12:01 -0600
 categories: writeups
 description: "Crackme challenges writeup from the Modern Binary Exploitation course."
 title:  "Basic Reverse Engineering (writeup) - Part 0x00"
+author: "Iliya Dafchev"
 ---
 
 # Introduction
