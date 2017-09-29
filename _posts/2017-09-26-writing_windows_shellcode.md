@@ -4,7 +4,6 @@ date:   2017-09-26 09:12:01 -0600
 categories: exploit
 description: "A second look at the arcane art of shellcode writing"
 title:  "Basics of Windows shellcode writing"
-name: "Basics of Windows shellcode writing"
 author: "Iliya Dafchev"
 ---
 # Table of contents
