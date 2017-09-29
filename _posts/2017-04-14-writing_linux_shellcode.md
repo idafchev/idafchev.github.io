@@ -4,6 +4,7 @@ date:   2017-04-14 15:12:01 -0600
 categories: exploit
 description: "Introduction to the arcane art of shellcode writing."
 title:  "Writing a port binding shellcode for Linux"
+author: "Iliya Dafchev"
 ---
 
 ## Introduction
