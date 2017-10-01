@@ -212,7 +212,7 @@ xor eax, eax 			; counter = 0
 	ret
 ```
 
-# <a name="call_function"> Call the function
+# <a name="call_function"></a> Call the function
 What's left is to call *WinExec*{: style="color: LightGreen"} with the appropriate arguments: 
 ```nasm
 xor edx, edx
