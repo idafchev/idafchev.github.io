@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+description: "About me and the purpose of this blog"
 ---
 Just a guy interested in infosec. This blog is mainly to write down the things I learn, because when you try to explain something you can see if you truly understand it. Occasionally I migth write about non-security related or even non-tech subjects that I'm interested in.
 
