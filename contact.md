@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Contact
+description: "How to send a pigeon"
 ---
 ### You can contact me at &#105;&#100;&#097;&#102;&#099;&#104;&#101;&#118;(&#052;&#116;)&#109;&#097;&#105;&#108;(&#100;&#111;&#116;)&#098;&#103;
 
