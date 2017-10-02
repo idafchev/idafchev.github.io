@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Posts
+description: "List of all blog posts"
 ---
 <div class="bloglist">
 {% for post in site.posts %}
