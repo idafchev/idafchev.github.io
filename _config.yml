@@ -7,6 +7,7 @@ show_downloads: false
 disqus:
   shortname: idafchev
 google_verify: cW4TLH1bfeLvBJnTMoroLoGm6POKJdKgoyIgt8hQHfI
+google_analytics: UA-110057192-1
 github_username:  idafchev
 #highlighter: rouge
 gems:
