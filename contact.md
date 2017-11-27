@@ -3,7 +3,7 @@ layout: page
 title: Contact
 description: "Twitter handle, e-mail, keybase and PGP public key"
 ---
-&#105;&#100;&#097;&#102;&#099;&#104;&#101;&#118;(&#052;&#116;)&#109;&#097;&#105;&#108;(&#100;&#111;&#116;)&#098;&#103;
+&#105;&#100;&#097;&#102;&#099;&#104;&#101;&#118;(&#052;&#116;)&#109;&#097;&#105;&#108;(&#100;&#111;&#116;)&#098;&#103;  
 twitter: @IliyaDafchev  
 keybase: keybase.io/idafchev
 
