@@ -354,8 +354,8 @@ For completeness I'll list the default paths to some configuration files and oth
 
 */etc/apache2/apache2.conf*{: style="color: LightGreen"} - apache2 configuration  
 */etc/apache2/ports.conf*{: style="color: LightGreen"} - configuration of listening ports used by apache2  
-*/etc/apache2/sites-enabled/000-default.conf*{: style="color: LightGreen"} - site-specific configuration  
-*/etc/apache2/sites-available/000-default.conf*{: style="color: LightGreen"} - site-specific configuration  
+*/etc/apache2/sites-enabled/000-default.conf*{: style="color: LightGreen"} - virtual host configuration  
+*/etc/apache2/sites-available/000-default.conf*{: style="color: LightGreen"} - virtual host configuration  
 */usr/local/apache2/*{: style="color: LightGreen"} - if apache is installed from source, the default configuration files are found under this directory.   
 
 */var/www/html/*{: style="color: LightGreen"} - usually the default directory for the webpage source code and files. Should look for index.php or other well known files.  
@@ -363,7 +363,7 @@ For completeness I'll list the default paths to some configuration files and oth
 */etc/squid/squid.conf*{: style="color: LightGreen"} - squid proxy configuration file  
 
 */etc/nginx/nginx.conf*{: style="color: LightGreen"} - nginx configuration  
-*/etc/nginx/sites-available/default*{: style="color: LightGreen"} - site-specific configuration  
-*/etc/nginx/sites-enabled/default*{: style="color: LightGreen"} - site-specific configuration  
+*/etc/nginx/sites-available/default*{: style="color: LightGreen"} - virtual host configuration  
+*/etc/nginx/sites-enabled/default*{: style="color: LightGreen"} - virtual host configuration  
 
 */etc/php/[version]/cli/php.ini*{: style="color: LightGreen"} - php configuration file  
