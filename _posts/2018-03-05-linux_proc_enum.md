@@ -3,7 +3,7 @@ layout: post
 date:   2018-03-05 09:12:01 -0600
 categories: enumeration
 description: "When attackers have arbitrary file read access to a Linux machine, they can leverage the /proc filesystem for enumeration"
-title:  "Linux enumeration with only read access"
+title:  "Linux enumeration with read access only"
 ---
 # Table of contents
 [Introduction](#introduction)  
