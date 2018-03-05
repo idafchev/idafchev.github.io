@@ -287,7 +287,7 @@ N: Name="SynPS/2 Synaptics TouchPad"
 [...snip...]
 ```
 
-*/proc/bus/pci/devices*{: style="color: LightGreen"} - enumerate PCI connected devices. Scroll to the left end.
+*/proc/bus/pci/devices*{: style="color: LightGreen"} - enumerate PCI connected devices. Go to the right end.
 ```
 0100    10026742        1d              b000000c                       0                c2000004                       0                    4001                       0                   c0002                10000000                       0                   20000                       0                     100                       0                   20000        radeon
 0101    1002aa90        1e              c2020004                       0                       0                       0                       0                       0                       0                    4000                       0                       0                       0                       0                       0                       0        snd_hda_intel
