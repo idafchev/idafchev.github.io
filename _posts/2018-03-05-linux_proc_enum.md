@@ -21,6 +21,8 @@ But attackers can enumerate much more than just files, when they have file read 
 Below is an example of XXE exploit to list running processes without the need of command execution.  
 ![xxe_vulnerability](/images/linux_proc_enum/xxe02.png)
 
+Defenders should be aware that even with such restricted access it's possible to disclose valuable information about the machine, which attackers can use to their advantage and further compromise the machine.
+
 # <a name="proc"></a> The proc filesystem
 The man pages explain the proc filesystem well enough: "*The proc filesystem is a pseudo-filesystem which provides an interface to kernel data structures. It is commonly mounted at /proc. [...] Most of the files in the proc filesystem are read-only, but some files are writable, allowing kernel variables to be changed.*". 
 
