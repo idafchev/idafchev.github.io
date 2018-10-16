@@ -570,6 +570,19 @@ Below you can see the stack alignment issue illustrated:
 With the fix the stack is aligned to 4 bytes:  
 ![align02](/images/windows_shellcode/align02.PNG)
 
+## Edit 0x01:
+The previous change, although it works when it's used in a compiled binary, produces a null byte, which is a problem when used to exploit a buffer overflow. The null byte is caused by the instruction "push 636578h" which assembles to "68 78 65 63 00".
+
+The version below should work and should not produce null bytes:
+```asm
+        xor esi, esi
+        pushw si	; Pushes only 2 bytes, thus changing the stack alignment to 2-byte boundary
+        push 63h
+        pushw 6578h	; Pushing another 2 bytes returns the stack to 4-byte alignment
+        push 456e6957h
+        mov [ebp-4], esp ; edx -> "WinExec\x00"
+```
+
 # <a name="resources"></a> Resources
 For the pictures of the *TEB*{: style="color: LightSalmon"}, *PEB*{: style="color: LightSalmon"}, etc structures I consulted several resources, because the official documentation at MSDN is either non existent, incomplete or just plain wrong. Mainly I used [ntinternals](https://undocumented.ntinternals.net/), but I got confused by some other resources I found before that. I'll list even the wrong resources, that way if you stumble on them, you won't get confused (like I did).
 
