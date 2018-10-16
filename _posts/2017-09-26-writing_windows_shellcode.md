@@ -522,6 +522,39 @@ Data Execution Prevention (DEP): No
 Proof that it works :)  
 ![test_calc](/images/windows_shellcode/test_calc.gif)
 
+## Edit
+One of the commenters, Nathu, told me about a bug in my shellcode. If you run it on an OS other than Windows 10 you'll notice that it's not working. This is a good opportunity to challenge yourself and try to fix it on your own by debugging the shellcode and google what may cause such behaviour. It's an interesting issue :) 
+
+In case you can't fix it (or don't want to), you can find the correct shellcode and the reason for the bug below...
+
+It appears that I made a mistake in my code. The stack should be aligned to a 4 byte boundary (ESP should point to an address ending in 0,4,8 or C), otherwise depending on your machine it could cause errors.
+
+The part shown below (where 'WinExec' string is pushed on the stack) messes up the alignment, which somehow causes WinExec to fail.
+
+```asm
+; push the function name on the stack
+xor esi, esi
+push esi		; null termination
+push 63h
+pushw 6578h		;  THIS PUSH MESSED THE ALIGNMENT
+push 456e6957h
+mov [ebp-4], esp 	; var4 = "WinExec\x00"
+```
+
+Altough it still works without problem on my Win10 machine, when I tested it in a Win7 VM the WinExec produces the error you described.
+
+To fix it change that part of the assembly to:
+
+```asm
+; push the function name on the stack
+xor esi, esi		; null termination
+push esi                        
+push 636578h		; NOW THE STACK SHOULD BE ALLIGNED PROPERLY
+push 456e6957h
+mov [ebp-4], esp	; var4 = "WinExec\x00"
+```
+
+
 # <a name="resources"></a> Resources
 For the pictures of the *TEB*{: style="color: LightSalmon"}, *PEB*{: style="color: LightSalmon"}, etc structures I consulted several resources, because the official documentation at MSDN is either non existent, incomplete or just plain wrong. Mainly I used [ntinternals](https://undocumented.ntinternals.net/), but I got confused by some other resources I found before that. I'll list even the wrong resources, that way if you stumble on them, you won't get confused (like I did).
 
