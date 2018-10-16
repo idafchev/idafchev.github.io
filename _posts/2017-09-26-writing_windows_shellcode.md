@@ -571,7 +571,7 @@ With the fix the stack is aligned to 4 bytes:
 ![align02](/images/windows_shellcode/align02.PNG)
 
 ## Edit 0x01:
-The previous change, although it works when it's used in a compiled binary, produces a null byte, which is a problem when used to exploit a buffer overflow. The null byte is caused by the instruction "push 636578h" which assembles to "68 78 65 63 00".
+Although it works when it's used in a compiled binary, the previous change produces a null byte, which is a problem when used to exploit a buffer overflow. The null byte is caused by the instruction "push 636578h" which assembles to "68 78 65 63 00".
 
 The version below should work and should not produce null bytes:
 ```nasm
