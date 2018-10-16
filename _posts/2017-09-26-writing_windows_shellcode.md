@@ -541,8 +541,6 @@ push 456e6957h
 mov [ebp-4], esp 	; var4 = "WinExec\x00"
 ```
 
-Altough it still works without problem on my Win10 machine, when I tested it in a Win7 VM the WinExec produces the error you described.
-
 To fix it change that part of the assembly to:
 
 ```asm
