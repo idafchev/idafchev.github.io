@@ -564,10 +564,10 @@ mov [ebp-4], esp	; var4 = "WinExec\x00"
 The reason it works on Windows 10 is probably because WinExec no longer requires the stack to be aligned.
 
 Below you can see the stack alignment issue illustrated:  
-![align01](/images/windows_shellcode/align01.png)
+![align01](/images/windows_shellcode/align01.PNG)
 
 With the fix:  
-![align02](/images/windows_shellcode/align02.png)
+![align02](/images/windows_shellcode/align02.PNG)
 
 # <a name="resources"></a> Resources
 For the pictures of the *TEB*{: style="color: LightSalmon"}, *PEB*{: style="color: LightSalmon"}, etc structures I consulted several resources, because the official documentation at MSDN is either non existent, incomplete or just plain wrong. Mainly I used [ntinternals](https://undocumented.ntinternals.net/), but I got confused by some other resources I found before that. I'll list even the wrong resources, that way if you stumble on them, you won't get confused (like I did).
