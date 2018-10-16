@@ -566,7 +566,7 @@ The reason it works on Windows 10 is probably because WinExec no longer requires
 Below you can see the stack alignment issue illustrated:  
 ![align01](/images/windows_shellcode/align01.PNG)
 
-With the fix:  
+With the fix the stack is aligned to 4 bytes:  
 ![align02](/images/windows_shellcode/align02.PNG)
 
 # <a name="resources"></a> Resources
