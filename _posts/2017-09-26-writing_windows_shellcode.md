@@ -527,6 +527,7 @@ One of the commenters, *Nathu*{: style="color: LightSalmon"}, told me about a bu
 
 In case you can't fix it (or don't want to), you can find the correct shellcode and the reason for the bug below...
 
+EXPLANATION:
 Depending on the compiler options, programs may align the stack to 2, 4 or more byte boundaries (should by power of 2). Also some functions might expect the stack to be aligned in a certain way. 
 
 The alignment is done for optimisation reasons and you can read a good explanation about it here: [Stack Alignment](https://stackoverflow.com/questions/672461/what-is-stack-alignment).
