@@ -527,11 +527,20 @@ One of the commenters, Nathu, told me about a bug in my shellcode. If you run it
 
 In case you can't fix it (or don't want to), you can find the correct shellcode and the reason for the bug below...
 
-It appears that I made a mistake in my code. The stack should be aligned to a 4 byte boundary (ESP should point to an address ending in 0,4,8 or C), otherwise depending on your machine it could cause errors.
+It appears that I made a mistake in my code. Depending on the compiler options, programs may align the stack to 2, 4 or more byte boundaries (should by power of 2). Also some functions might expect the stack to be aligned in a certain way. 
+
+The alignment is done for optimisation reasons and you can read a good explanation about it here: [Stack Alignment](https://stackoverflow.com/questions/672461/what-is-stack-alignment).
+
+If you tried to debug the shellcode, you've probably noticed that problem was with the WinExec function which returns "ERROR_NOACCESS" error code, although it should have access to calc.exe!
+
+If you read this [msdn article](https://msdn.microsoft.com/en-us/library/83ythb65.aspx), you'll see the following:
+"Visual C++ generally aligns data on natural boundaries based on the target processor and the size of the data, up to 4-byte boundaries on 32-bit processors, and 8-byte boundaries on 64-bit processors". I assume the same alignemnt settings are used for building the system DLLs.
+
+Because we're executing code for 32bit architecture, the WinExec function probably expects the stack to be aligned up to 4-byte boundary. This means that a 2-byte variable will be saved at an address that's multiple of 2, and a 4-byte variable will be saved at an address that's multiple of 4. For example take two variables - 2 byte and 4 byte in size. If the 2 byte variable is at an address 0x0004 then the 4 byte variable will be placed at address 0x0008. This means there are 2 bytes padding after the 2 byte variable. This is also the reason why sometimes the allocated memory on stack for local variables is larger than necessary.
 
 The part shown below (where 'WinExec' string is pushed on the stack) messes up the alignment, which somehow causes WinExec to fail.
 
-```asm
+```nasm
 ; push the function name on the stack
 xor esi, esi
 push esi		; null termination
@@ -543,7 +552,7 @@ mov [ebp-4], esp 	; var4 = "WinExec\x00"
 
 To fix it change that part of the assembly to:
 
-```asm
+```nasm
 ; push the function name on the stack
 xor esi, esi		; null termination
 push esi                        
