@@ -9,19 +9,19 @@ keybase: keybase.io/idafchev
 
 <form id="contact-form" class="contact-form" action="https://www.enformed.io/v5iyjenv" method="POST">
 
+
+    <label style="width: 100px; margin: 5px 0; display: inline-block; vertical-align: top;" for="email">E-mail</label>
+    <input style="margin: 5px 0;padding: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;border: 1px solid #bbb;" id="email" type="email" name="email" class="field" required autofocus /><br/>
+
+
   <div class="form-group">
-    <label for="email">E-mail</label>
-    <input id="email" type="email" name="email" class="field" required autofocus /><br/>
+    <label style="width: 100px; margin: 5px 0; display: inline-block; vertical-align: top;" for="subject">Subject</label>
+    <input style="margin: 5px 0;padding: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;border: 1px solid #bbb;width: 73%;" id="subject" type="text" name="subject" class="field" required /><br/>
   </div>
 
   <div class="form-group">
-    <label for="subject">Subject</label>
-    <input id="subject" type="text" name="subject" class="field" required /><br/>
-  </div>
-
-  <div class="form-group">
-    <label for="message">Message</label>
-    <textarea id="message" name="message" required ></textarea><br/>
+    <label style="width: 100px; margin: 5px 0; display: inline-block; vertical-align: top;" for="message">Message</label>
+    <textarea style="margin: 5px 0;padding: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;border: 1px solid #bbb;width: 73%;height: 150px;"  id="message" name="message" required ></textarea><br/>
   </div>
   
   <div class="form-group">
@@ -29,7 +29,7 @@ keybase: keybase.io/idafchev
     <input type="hidden" name="*honeypot" />
   </div>
                       
-  <button type="submit" class="btn btn-default">Send</button>
+  <button style="margin: 5px 0;padding: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;border: 0;padding: 8px 20px;margin-top: 20px;" type="submit" class="btn btn-default">Send</button>
 </form>
 
 My public PGP key:
