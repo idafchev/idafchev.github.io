@@ -3,14 +3,13 @@ layout: page
 title: Contact
 description: "Twitter handle, e-mail, keybase and PGP public key"
 ---
-&#105;&#100;&#097;&#102;&#099;&#104;&#101;&#118;(&#052;&#116;)&#109;&#097;&#105;&#108;(&#100;&#111;&#116;)&#098;&#103;  
 twitter: @IliyaDafchev  
 keybase: keybase.io/idafchev
 
 <form id="contact-form" class="contact-form" action="https://www.enformed.io/v5iyjenv" method="POST">
 
   <div class="form-group">
-    <label style="width: 100px; margin: 5px 0; display: inline-block; vertical-align: top;" for="email">E-mail</label>
+    <label style="width: 100px; margin: 5px 0; display: inline-block; vertical-align: top;" for="email">Your E-mail</label>
     <input style="margin: 5px 0;padding: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;border: 1px solid #bbb;" id="email" type="email" name="email" class="field" required autofocus /><br/>
   </div>
 
@@ -31,6 +30,7 @@ keybase: keybase.io/idafchev
                       
   <button style="margin: 5px 0;padding: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;border: 0;padding: 8px 20px;margin-top: 20px;" type="submit" class="btn btn-default">Send</button>
 </form>
+
 
 My public PGP key:
 ```
