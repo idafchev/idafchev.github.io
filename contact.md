@@ -24,7 +24,7 @@ keybase: keybase.io/idafchev
   </div>
   
   <div class="form-group">
-    <input type="hidden" name="*redirect" value="https://youtube.com" />
+    <input type="hidden" name="*redirect" value="https://idafchev.github.io/submit_success" />
     <input type="hidden" name="*honeypot" />
   </div>
                       
