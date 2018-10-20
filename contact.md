@@ -9,10 +9,10 @@ keybase: keybase.io/idafchev
 
 <form id="contact-form" class="contact-form" action="https://www.enformed.io/v5iyjenv" method="POST">
 
-
+  <div class="form-group">
     <label style="width: 100px; margin: 5px 0; display: inline-block; vertical-align: top;" for="email">E-mail</label>
     <input style="margin: 5px 0;padding: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;border: 1px solid #bbb;" id="email" type="email" name="email" class="field" required autofocus /><br/>
-
+  </div>
 
   <div class="form-group">
     <label style="width: 100px; margin: 5px 0; display: inline-block; vertical-align: top;" for="subject">Subject</label>
