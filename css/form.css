@@ -1,0 +1,30 @@
+.contact-form {
+  label {
+    width: 100px;
+    margin: 5px 0;
+    display: inline-block;
+    vertical-align: top;
+  }
+  input, textarea, button {
+    margin: 5px 0;
+    padding: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+  }
+  input.field, textarea {
+    min-width: 330px;
+  }
+  input[name=subject], textarea {
+    width: 73%;
+  }
+  textarea {
+    height: 150px;
+  }
+  button {
+    border: 0;
+    padding: 8px 20px;
+    margin-top: 20px;
+  }
+}
