@@ -4,7 +4,7 @@ title: Contact
 description: "Twitter handle, e-mail, keybase and PGP public key"
 ---
 twitter: @IliyaDafchev  
-keybase: keybase.io/idafchev
+keybase: keybase.io/idafchev  
 idafchev (4t) mail (d0t) bg
 
 
