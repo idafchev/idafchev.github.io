@@ -5,31 +5,7 @@ description: "Twitter handle, e-mail, keybase and PGP public key"
 ---
 twitter: @IliyaDafchev  
 keybase: keybase.io/idafchev
-
-<form id="contact-form" class="contact-form" action="https://www.enformed.io/v5iyjenv" method="POST">
-
-  <div class="form-group">
-    <label style="width: 100px; margin: 5px 0; display: inline-block; vertical-align: top;" for="email">Your E-mail</label>
-    <input style="margin: 5px 0;padding: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;border: 1px solid #bbb;" id="email" type="email" name="email" class="field" required autofocus /><br/>
-  </div>
-
-  <div class="form-group">
-    <label style="width: 100px; margin: 5px 0; display: inline-block; vertical-align: top;" for="subject">Subject</label>
-    <input style="margin: 5px 0;padding: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;border: 1px solid #bbb;width: 73%;" id="subject" type="text" name="subject" class="field" required /><br/>
-  </div>
-
-  <div class="form-group">
-    <label style="width: 100px; margin: 5px 0; display: inline-block; vertical-align: top;" for="message">Message</label>
-    <textarea style="margin: 5px 0;padding: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;border: 1px solid #bbb;width: 73%;height: 150px;"  id="message" name="message" required ></textarea><br/>
-  </div>
-  
-  <div class="form-group">
-    <input type="hidden" name="*redirect" value="https://idafchev.github.io/submit_success" />
-    <input type="hidden" name="*honeypot" />
-  </div>
-                      
-  <button style="margin: 5px 0;padding: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;border: 0;padding: 8px 20px;margin-top: 20px;" type="submit" class="btn btn-default">Send</button>
-</form>
+idafchev (4t) mail (d0t) bg
 
 
 My public PGP key:
