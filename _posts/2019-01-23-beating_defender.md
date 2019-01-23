@@ -41,13 +41,13 @@ So far so good. But when you transfer the malicious executable to the victim mac
 # Analysis
 First, let's see the source code of the evasion module, to know what to expect in the binary. The path to the module is *metasploit-framework/modules/evasion/windows/windows_defender_exe.rb*{: style="color: LightSalmon"}
 
-![defender_evasion_module.png](images/beating_defender/defender_evasion_module.png)
+![defender_evasion_module.png](/images/beating_defender/defender_evasion_module.png)
 
 The module uses RC4 with a random key (*1*{: style="color: Red"}) to encrypt the payload (*2*{: style="color: Red"})(*3*{: style="color: Red"}). The encrypted payload is placed in a C source file template as character buffer (*4*{: style="color: Red"}). The RC4 implementation is inside the rc4.h header file.  The C code allocates memory which will hold the decrypted payload, then uses OpenProcess WinAPI function to bypass the real-time protection and finally decrypts and executes the payload.
 
 The OpenProcess technique is interesting one. Some really smart people with a lot of spare time have reversed the scanning and detection engine of Windows Defender (*C:\ProgramData\Microsoft\Windows Defender\Definition Updates\{GUID}\mpengine.dll*{: style="color: LightSalmon"}). It is a large 14 MB binary with over 40k functions and has emulation capabilities for x86, js, etc. 
 
-![mpengine_disassembly.png](images/beating_defender/mpengine_disassembly.png)
+![mpengine_disassembly.png](/images/beating_defender/mpengine_disassembly.png)
 
 Rapid7 found out that the function responsible for the emulation of OpenProcess always returns 1. Thus in order for malware to detect if it's running inside a sandbox it can use OpenProcess in such a way to make sure that it fails (returns 0). If the malware is in the Defenders sandbox then OpenProcess will return 1, but if it's running in a real environment OpenProcess will return 0. A simple 'if' check is needed to bypass the real-time protection.
 
@@ -55,55 +55,55 @@ The Metasploit module tries to open the System process (PID 4) with PROCESS_ALL_
 
 The C code is compiled with Metasploit::Framework::Compiler::Windows.compile_random_c() method which obfuscates the C code (*5*{: style="color: Red"}). This means that the code shown from the verbose output (the C template) is not the final code! The compilation is done in *metasploit-framework/lib/metasploit/framework/compiler/windows.rb*{: style="color: LightSalmon"}
 
-![metasploit_windows_compiler_01.png](images/beating_defender/metasploit_windows_compiler_01.png)
+![metasploit_windows_compiler_01.png](/images/beating_defender/metasploit_windows_compiler_01.png)
 
 The method responsible for the actual compilation (compile_c) uses Metasm - a pure ruby C compiler.
 
-![metasploit_windows_compiler_03.png](images/beating_defender/metasploit_windows_compiler_03.png)
+![metasploit_windows_compiler_03.png](/images/beating_defender/metasploit_windows_compiler_03.png)
 
 To print the actual code after the randomization and right befor compilation, just add puts:
 
-![metasploit_windows_compiler_02.png](images/beating_defender/metasploit_windows_compiler_02.png)
+![metasploit_windows_compiler_02.png](/images/beating_defender/metasploit_windows_compiler_02.png)
 
 Now when I generate a new executable, the actual C code is printed:
 
-![randomized_c_code.png](images/beating_defender/randomized_c_code.png)
+![randomized_c_code.png](/images/beating_defender/randomized_c_code.png)
 
 The final code also contains the header files ( at the top you see part of the rc4 implementation). In the blue boxes I highlighted the random pieces of code which the randomizer added.
 
 Before analyzing the evasion binaries I wanted to know how the Metasm compiler works. For the purpose I created a new bare bones module for Metasploit which used Metasm to compile a simple Hello World C program without obfuscation. To create the module I just copied the Defender one to *metasploit-framework/modules/evasion/test/windows_defender_exe.rb*{: style="color: LightSalmon"} and changed it to suit my needs.
 
-![test_evasion_module.png](images/beating_defender/test_evasion_module.png)
+![test_evasion_module.png](/images/beating_defender/test_evasion_module.png)
 
-![test_evasion_module_run.png](images/beating_defender/test_evasion_module_run.png)
+![test_evasion_module_run.png](/images/beating_defender/test_evasion_module_run.png)
 
 Now let's analyze it :)
 
 One thing you'll notice right away when checking the hexdump is the changed DOS stub string. The strings, libraries and functions are also there in plaintext, not obfuscated.
 
-![hex.png](images/beating_defender/hex.png)
+![hex.png](/images/beating_defender/hex.png)
 
-![bintext.png](images/beating_defender/bintext.png)
+![bintext.png](/images/beating_defender/bintext.png)
 
 DIE doesn't detect the Metasm compiler.
 
-![die_01.png](images/beating_defender/die_01.png)
+![die_01.png](/images/beating_defender/die_01.png)
 
 The entropy is quite low, so we can be pretty sure there is no additional packing happening behind the scenes drung compilation.
 
-![die_02.png](images/beating_defender/die_02.png)
+![die_02.png](/images/beating_defender/die_02.png)
 
 If you upload a sample to Hybrid Analysis in results you'll see that the file was accessing registry keys for TerminalServices, but that's just part of the initialization of kernelbase.dll. Below you can see the same behaviour with another non-malicous program.
 
 Procmon result from running bintext:
-![procmon_bintext.png](images/beating_defender/procmon_bintext.png)
+![procmon_bintext.png](/images/beating_defender/procmon_bintext.png)
 
 Procmon result from running Metasploit generated binary:
-![procmon_test.png](images/beating_defender/procmon_test.png)
+![procmon_test.png](/images/beating_defender/procmon_test.png)
 
 And finally let's look at the dissassembly :)
 Below is the result of the static analysis:
-![test_dissassembly.png](images/beating_defender/test_dissassembly.png)
+![test_dissassembly.png](/images/beating_defender/test_dissassembly.png)
 
 There are 3 subroutines - start, get_address and wrap_call_function.
 
@@ -120,7 +120,7 @@ So, basically, get_address returns its own address.
 and then jumps to address *[eax+0x2fe2]*{: style="color: LightGreen"} (equals to 0x40101e + 0x2fe2 = 0x404000)
 
 At *0x404000*{: style="color: LightSalmon"} is the imported printf function.
-![printf.png](images/beating_defender/printf.png)
+![printf.png](/images/beating_defender/printf.png)
 
 **start:**  
 Loads *0x40101e*{: style="color: LightSalmon"} (the address of get_address) in eax
@@ -129,15 +129,15 @@ then pushes *0x402000*{: style="color: LightSalmon"} on stack and calls printf (
 
 You've probably guessed already that at 0x402000 resides the argument to printf.
 
-![string.png](images/beating_defender/string.png)
+![string.png](/images/beating_defender/string.png)
 
 So, the Metasm binaries use a function address as a base address to calculate the offsets to constants and imported functions and then uses a second wrapper function to call the imported functions.
 
 The analysis of a complete obfuscated evasion binary didn't reveal anything different.
 
-![disassembly_obfuscated_01.png](images/beating_defender/disassembly_obfuscated_01.png)
+![disassembly_obfuscated_01.png](/images/beating_defender/disassembly_obfuscated_01.png)
 
-![disassembly_obfuscated_02.png](images/beating_defender/disassembly_obfuscated_02.png)
+![disassembly_obfuscated_02.png](/images/beating_defender/disassembly_obfuscated_02.png)
 
 Apart from the Metasm peculiarities, there isn't anything new. Whatever the C code does, thats what you'll find in the assembly. No additional obfuscation, packing or optimization happening behind the scenes. Which means that the C code alone is enough to study the operation of the generated files. 
 
