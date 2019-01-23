@@ -192,7 +192,7 @@ LPVOID lpBuf = wrap_virtualalloc(valloc_param4(234),valloc_param3(),valloc_param
 
 The next thing to remove is the RC4 algorithm. I wrote a custom XOR-based encryption algorithm with several transformations of the original shellcode payload. The algorithm isn't necessary to be cryptographically secure (mine is definitely NOT), the only purpose here is obfuscation, not security. With that changed, Defender is unlikely to have a signature to match my algorithm or the encrypted payload. 
 
-Sounds easy, but there was A LOT of trial and error. There are some characters which have to be avoided or they break the ruby script, escaping them didn't work. Also the errors messages don't help at all, 90% I had to guess what was the cause of the problem. At the end I decided to add one final transformation to the payload and make it entirely of printable ASCII characters which also added a nice bonus obfuscation points :)
+Sounds easy, but there was A LOT of trial and error. There are some characters which have to be avoided or they break the ruby script, escaping them didn't work. Also the errors messages don't help at all, 90% of the time I had to guess what was the cause of the problem. At the end I decided to add one final transformation to the payload and make it entirely of printable ASCII characters which also added a nice bonus obfuscation points :)
 
 Let's summarize:
 - OpenProcess and VirtAlloc are changed in such a way so it's unlikely a static signature would match
