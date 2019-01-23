@@ -213,7 +213,7 @@ After I fixed the bug, Defender caught the malware, not only that but it detecte
 
 ![fixed_shellcode.gif](images/beating_defender/fixed_shellcode.gif)
 
-The only way for Defender to know my file contains Meterpreter payload to emulate the code, run the decryption routines and get access to the actual shellcode which I generated with msfvenom. But this shouldn't have happend, right? I have the OpenProcess trick implemented, sandbox detection shouldn't be happening!
+The only way for Defender to know my file contains Meterpreter payload  is to emulate the code, run the decryption routines and get access to the actual shellcode which I generated with msfvenom. But this shouldn't have happend, right? I have the OpenProcess trick implemented, sandbox detection shouldn't be happening! Unless Microsoft changed the behaviour of the emulated OpenProcess.
 
 To test my theory I broke the payload on purpose and generated a dozen files. Non were detected. Did the same with properly working ones - all got detected like Meterpreter. 
 
@@ -243,13 +243,13 @@ I removed OpenProcess because it's not needed anymore.
 
 ![with_timer_loop_exec.gif](images/beating_defender/with_timer_loop_exec.gif)
 
-Execution is successful :) 
+Execution successful :) 
 
 But we're not done yet, remember the cloud functionality? When I turned my Internet connection back on, Defender caught the malicious file and marked it as Trojan:Win32/Fuerboos. 
 
 ![cloud_detection.PNG](images/beating_defender/cloud_detection.PNG)
 
-This means that the sandbox still didn't pass my loop, outherwise it should have been marked as Meterpreter. The ML algorithms find something else in my file suspicious. 
+This means that the sandbox still didn't pass my loop, outherwise it should have been marked as Meterpreter. The ML algorithms finds something else in my file suspicious. 
 
 I decided to sign my executable with a spoofed certificate using the CarbonCopy tool because some AVs don't verify the whole chain of the certificate. And it worked. The only problem now is that when I execute the file Windows detects that it is signed from unknown publisher and warns me that the file origin is "unknown". But no antivirus detections!
 
