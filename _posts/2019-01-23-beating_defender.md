@@ -2,7 +2,7 @@
 layout: post
 date:   2019-01-23 22:00:00 +0200
 categories: research
-description: "A research on why the new defender evation modules fail to evade and how to fix it manually"
+description: "A research on why the new defender evasion modules fail to evade"
 title:  "Beating Windows Defender. Analysis of Metasploit's new evasion modules."
 ---
 # Introduction
