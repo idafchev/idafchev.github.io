@@ -206,12 +206,12 @@ SUCCESS! Defender didn't catch it! But my happiness was short-lived, because whe
 
 Turns out I had a bug in my ASCII transform code, so the resulting shellcode after the decryption was just junk bytes. 
 
-![broken_shellcode.gif](images/beating_defender/broken_shellcode.gif)
+![broken_shellcode.gif](/images/beating_defender/broken_shellcode.gif)
 
 This mistake was a lucky one and I'm glad I made it, you'll see why in a moment.
 After I fixed the bug, Defender caught the malware, not only that but it detected it as Metrepreter!
 
-![fixed_shellcode.gif](images/beating_defender/fixed_shellcode.gif)
+![fixed_shellcode.gif](/images/beating_defender/fixed_shellcode.gif)
 
 The only way for Defender to know my file contains Meterpreter payload  is to emulate the code, run the decryption routines and get access to the actual shellcode which I generated with msfvenom. But this shouldn't have happend, right? I have the OpenProcess trick implemented, sandbox detection shouldn't be happening! Unless Microsoft changed the behaviour of the emulated OpenProcess.
 
@@ -219,7 +219,7 @@ To test my theory I broke the payload on purpose and generated a dozen files. No
 
 If Microsoft changed the behaviour of the emulated version of OpenProcess, then it probably returns either 1 or 0. I changed the condition after OpenProcess to  *if(proc==256)*{: style="color: LightSalmon"} and generated a few more files. None were detected. So it appears that microsoft did indeed changed the behaviour of OpenProcess inside mpengine.dll. It can no longer be used as sandbox detection, because you can't force it to return a predetermined value different from 1 or 0.
 
-![modified_condition.gif](images/beating_defender/modified_condition.gif)
+![modified_condition.gif](/images/beating_defender/modified_condition.gif)
 
 I felt really bad. All this work, manual obfuscation and whatnot was for nothing. I started to think of other ways for sandbox detection which didn't involve reversing of the monstrous mpengine.dll. And decided to try the oldest trick in the book - delay! Add a loop with some stuff in it, which takes sufficiently long time to execute. People wouldn't like to wait 15 minutes for their files to be analyzed, every time they download something from the Internet, so emulation engines usually have a timer. They have to analyze the file in the specified time interval and if the time runs out the emulation stops.
 
@@ -241,19 +241,19 @@ if(i>0 && j!=(6325+zero(34))){
 ```
 I removed OpenProcess because it's not needed anymore.
 
-![with_timer_loop_exec.gif](images/beating_defender/with_timer_loop_exec.gif)
+![with_timer_loop_exec.gif](/images/beating_defender/with_timer_loop_exec.gif)
 
 Execution successful :) 
 
 But we're not done yet, remember the cloud functionality? When I turned my Internet connection back on, Defender caught the malicious file and marked it as Trojan:Win32/Fuerboos. 
 
-![cloud_detection.PNG](images/beating_defender/cloud_detection.PNG)
+![cloud_detection.PNG](/images/beating_defender/cloud_detection.PNG)
 
 This means that the sandbox still didn't pass my loop, outherwise it should have been marked as Meterpreter. The ML algorithms finds something else in my file suspicious. 
 
 I decided to sign my executable with a spoofed certificate using the CarbonCopy tool because some AVs don't verify the whole chain of the certificate. And it worked. The only problem now is that when I execute the file Windows detects that it is signed from unknown publisher and warns me that the file origin is "unknown". But no antivirus detections!
 
-![signed.gif](images/beating_defender/signed.gif)
+![signed.gif](/images/beating_defender/signed.gif)
 
 
 # Further reading
