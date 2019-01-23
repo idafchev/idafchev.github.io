@@ -159,7 +159,7 @@ and various combinations of those, I found that the signatures are based on:
 - VirtualAlloc
 - possibly the unusual compiler
 
-If we assume it's a static signature that's firing (because OpenProcess should bypass real-time protection), then to bypass it we have to obfuscate the code a little more then what Metasploit provides by default. The signature is unlikely to use OpenProcess and VirtuallAlloc alone as detection criteria (would cause too much false positives), so I guess it also checks their arguments along with the presence of other things. To obfuscate them we can write a wrapper function to call them outside main and additional junk functions which calculate the arguments. That way the values of the arguments would be known only at run-time, couldn't be inspected statically. 
+If we assume it's a static signature that's firing (because OpenProcess should bypass real-time protection), then to bypass it we have to obfuscate the code a little more then what Metasploit provides by default. The signature is unlikely to use OpenProcess and VirtuallAlloc alone as detection criteria (would cause too much false positives), so I guess it also checks their arguments along with the presence of other things. To obfuscate them we can write a wrapper function to call them outside main and add additional junk functions which calculate the arguments. That way the values of the arguments would be known only at run-time and can't be inspected statically. 
 
 For example, I wrote a similar code to the one below (I won't release the actual code), every argument and constant has to be "calculated" at runtime, also the function is not called directly, but though a wrapper function with changed order of arguments.
 ```c
