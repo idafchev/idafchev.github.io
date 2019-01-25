@@ -217,7 +217,7 @@ The only way for Defender to know my file contains Meterpreter payload  is to em
 
 To test my theory I broke the payload on purpose and generated a dozen files. Non were detected. Did the same with properly working ones - all got detected like Meterpreter. 
 
-If Microsoft changed the behaviour of the emulated version of OpenProcess, then it probably returns either 1 or 0. I changed the condition after OpenProcess to  *if(proc==256)*{: style="color: LightSalmon"} and generated a few more files. None were detected. So it appears that microsoft did indeed changed the behaviour of OpenProcess inside mpengine.dll. It can no longer be used as sandbox detection, because you can't force it to return a predetermined value different from 1 or 0.
+If Microsoft changed the behaviour of the emulated version of OpenProcess, then it returns either 0 or a handle. I changed the condition after OpenProcess to  *if(proc==256)*{: style="color: LightSalmon"} (check for some arbitrary handle, I guessed that 256 has small chance to be valid) and generated a few more files. None were detected. So it appears that microsoft did indeed changed the behaviour of OpenProcess inside mpengine.dll. It can no longer be used as sandbox detection, because you can't force it to return a predetermined value.
 
 ![modified_condition.gif](/images/beating_defender/modified_condition.gif)
 
