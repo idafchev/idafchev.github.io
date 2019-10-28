@@ -1,6 +1,6 @@
 ---
 layout: post
-date:   2019-10-28 20:00:00 +0200
+date:   2019-10-28 16:00:00 +0200
 categories: pentest
 description: "A specific case of bypassing a firewall"
 title:  "Combining ARP poisoning and IP spoofing to bypass firewalls"
