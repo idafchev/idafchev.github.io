@@ -26,7 +26,7 @@ EKANS malware is a ransomware which was first detected in December 2019 and whil
 
 During the security incidents last month, that hit the news, about the EKANS Ransomware, I decided to look at the inner workings of the malware and share my findings with the security community. My analysis was part of a research done in our [ASOC](https://www.tbs.tech/product/asoc/) team, part of [TBS](https://www.tbs.tech)
 
-We intended to publish the results earlier, but for various reasons, this blog post was delayed quite a bit, but nevertheless I think the information is still worth publishing.
+We intended to publish the results earlier, but for various reasons, this blog post was delayed quite a bit. Nevertheless I think the information is still worth publishing.
 
 The analyzed sample was obtained from the [abuse.ch](https://abuse.ch/) project, [MalwareBazaar](https://bazaar.abuse.ch/). Although the sample is publicly available, some parts of the analysis are anonymized to prevent harming victims reputation in any way.
 
