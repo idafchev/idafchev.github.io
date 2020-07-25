@@ -114,7 +114,7 @@ Below you can see the strings which get decrypted and then concatenated in order
 The resulting command is then executed with os.exec.Command().Run()  
 ![firewall off](/images/ekans/ekans_screenshot15.png)  
 
-This behaviour can also be seen with Porcess Monitor, during basic dynamic analysis:  
+This behaviour can also be seen with Process Monitor, during basic dynamic analysis:  
 ![firewall off](/images/ekans/ekans_screenshot16.png)  
 
 ![firewall off](/images/ekans/ekans_screenshot17.png)  
