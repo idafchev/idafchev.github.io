@@ -24,9 +24,9 @@ title:  "Malware analysis of EKANS ransomware"
 # <a name="1_summary"></a> 1. Summary
 EKANS malware is a ransomware which was first detected in December 2019 and while ransomware attacks are nothing new, EKANS had a functionality which made it stand out. In the list of processes, that it tries to terminate, there were some which are related to Industrial Control Systems (ICS).[1]  
 
-During the security incidents last month, that hit the news, about the EKANS Ransomware, I decided to look at the inner workings of the malware and share my findings with the security community.
+During the security incidents last month, that hit the news, about the EKANS Ransomware, I decided to look at the inner workings of the malware and share my findings with the security community. My analysis was part of a research done in our [ASOC](https://www.tbs.tech/product/asoc/) team, part of [TBS](https://www.tbs.tech)
 
-For various reasons, this blog post publication was delayed quite a bit, but nevertheless I think the information is still worth publishing.
+We intended to publish the results earlier, but for various reasons, this blog post was delayed quite a bit, but nevertheless I think the information is still worth publishing.
 
 The analyzed sample was obtained from the [abuse.ch](https://abuse.ch/) project, [MalwareBazaar](https://bazaar.abuse.ch/). Although the sample is publicly available, some parts of the analysis are anonymized to prevent harming victims reputation in any way.
 
@@ -44,7 +44,7 @@ I wasn't familiar with Go, so before proceeding with the analysis, I had to lear
 If you're not familiar with Go, I recommend GOing through the official tutorial [A Tour of Go](https://tour.golang.org/welcome/1). I went through all exercises to get some basic understanding of the language. Then, I compiled them locally and loaded them in a disassembler in order to compare the assembly with the actual code. Several online resources and blog posts explaning low level details about the Go compiler and how to reverse Go binaries also proved really helpful. 
 
 Information about the debugging symbols in Go binaries cannot easily be stripped completely, and so the original function names can be recovered.
-I used the [Go Reverse Engineering Toolkit](https://go-re.tk/gore/) library to write a script with which to restore the symbol names in IDA.
+I used the [Go Reverse Engineering Toolkit](https://go-re.tk/gore/) library to write a script with which to restore the symbol names.
 Unfortunately, EKANS has all its non-library functions obfuscated.  
 ![bintext](/images/ekans/ekans_screenshot02.png)  
 
