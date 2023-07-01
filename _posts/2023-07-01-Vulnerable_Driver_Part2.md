@@ -385,10 +385,23 @@ The same way we can get the values for the target process.
 And the active process links:  
 ![ActiveProcessLinks](/images/driver_vulnerability/windbg_activeprocesslinks.png)  
 
+For now, this concludes my kernel series of blog posts. I'm not sure if I'll find the time to write part 3, where I wanted to cover removing minifilter registry callbacks. But it's also too much on the offensive side for my taste, so I'm not even sure if it's good idea.  
+
+As a summary, the end purpose of kernel-level exploits boils down to reading and modifying kernel-level data structures which in turn modify the behaviour of the OS. A couple of such structures are the EPROCESS and KPROCESS.  
+
+You should have enough understanding by now to read the code of PPLKiller and PPLControl to understand how those tools remove the PPL protection from protected processes and even implement something on your own.  
+
+As an exercise you can try to extend the current code and add functionality:  
+- to hide a target process from the process list  
+- make a target process a critical process or a system process (such that when killed, the OS crashes)  
+- Change the token structure itself to enable all possible privileges  
+- Delete callbacks registered by minifilter drivers  
+
 # <a name="4_references"></a> 4. References
 1. [https://github.com/itm4n/PPLcontrol](https://github.com/itm4n/PPLcontrol)  
 2. [https://github.com/RedCursorSecurityConsulting/PPLKiller](https://github.com/RedCursorSecurityConsulting/PPLKiller)  
 3. [https://github.com/Barakat/CVE-2019-16098](https://github.com/Barakat/CVE-2019-16098)  
 4. [https://www.vergiliusproject.com/kernels/x64](https://www.vergiliusproject.com/kernels/x64)
 5. [https://en.wikipedia.org/wiki/Architecture_of_Windows_NT](https://en.wikipedia.org/wiki/Architecture_of_Windows_NT)
-6. [https://wumb0.in/finding-the-base-of-the-windows-kernel.html](https://wumb0.in/finding-the-base-of-the-windows-kernel.html)
+6. [https://wumb0.in/finding-the-base-of-the-windows-kernel.html](https://wumb0.in/finding-the-base-of-the-windows-kernel.html)
+7. [https://github.com/winsiderss/phnt](https://github.com/winsiderss/phnt)
