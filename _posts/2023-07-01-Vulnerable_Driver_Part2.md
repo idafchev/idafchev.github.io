@@ -389,7 +389,7 @@ For now, this concludes my kernel series of blog posts. I'm not sure if I'll fin
 
 As a summary, the end purpose of kernel-level exploits boils down to reading and modifying kernel-level data structures which in turn modify the behaviour of the OS. A couple of such structures are the EPROCESS and KPROCESS.  
 
-You should have enough understanding by now to read the code of PPLKiller and PPLControl to understand how those tools remove the PPL protection from protected processes and even implement something on your own.  
+You should have enough understanding by now to read the code of PPLKiller and PPLControl to understand how those tools remove the PPL protection from protected processes (hint: modifying some structures which can be found from EPROCESS) and even implement something on your own.  
 
 As an exercise you can try to extend the current code and add functionality:  
 - to hide a target process from the process list  
