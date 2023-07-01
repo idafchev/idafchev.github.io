@@ -598,6 +598,8 @@ Run the program as normal user, enter the address and... the value is correctly 
 
 This vulnerability turned out to be quite trivial and easy to exploit. Other driver vulnerabilities are similar in that they allow low privileged user to read/write to system memory. They can be as easy as this one, or a bit more involved to exploit - like giving access to *wrmsr*{: style="color: LightGreen"}, *rdmsr*{: style="color: LightGreen"} instructions, or to *MmMapIoSpace*{: style="color: LightGreen"} function.  
 
+While writing these posts and researching the different driver vulnerabilities, I read somewhere that it's common to find vulnerabilities in drivers that interact with hardware - measuring cpu temperature, overclocking, etc. I decided to try and find one on my own and what do you know - I found my first ever vulnerability. The third driver I checked had several vulnerabilities which were easy to spot even for someone new to this as me. I notified the vendor and I'm currently waiting for them to check it. I recommend checking the articles in the references, as they explore other drivers and vulnerabilities.  
+
 # <a name="6_references"></a> 6. References
 1. [https://github.com/itm4n/PPLcontrol](https://github.com/itm4n/PPLcontrol)  
 2. [https://github.com/RedCursorSecurityConsulting/PPLKiller](https://github.com/RedCursorSecurityConsulting/PPLKiller)  
