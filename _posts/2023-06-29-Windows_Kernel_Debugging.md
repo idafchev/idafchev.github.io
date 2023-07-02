@@ -14,7 +14,9 @@ title:  "Environment Setup for Windows Kernel Debugging with Windbg"
 
 # <a name="1_introduction"></a> 1. Introduction
 In this blog post, I will describe how to set up an environment for kernel debugging in Windows and provide a WinDbg command cheatsheet.  
-I will also reference some commands in subsequent posts to avoid repeating explanations.  
+I will reference some commands in subsequent posts to avoid repeating explanations.  
+
+When it comes to kernel debugging, it is crucial to understand that when a breakpoint is reached during the debugging process of an operating system, the entire OS freezes. Consequently, it becomes impossible to utilize a debugger within the same OS environment. Instead, a separate system is required, which connects remotely to the target OS undergoing debugging. This setup enables communication between the debugger and the target OS, ensuring that when execution is paused, your current OS remains unaffected.  
 
 # <a name="2_vm"></a> 2. Configuring your VM (debugee)  
 I am using VMware Workstation but other hypervisors should have similar options.  
@@ -122,7 +124,7 @@ Run Windbg with default COM settings, but specifying the COM port number as the 
 
 # <a name="4_windbg"></a> 4. Windbg initial steps
 
-After connecting to the debugged kernel, the first commands which are useful to use in windge are:
+After connecting to the debugged kernel, the first commands which are useful to use in windbg are:
 
 ```
 !sym noisy // makes the symbol loading more verbose. Helps to troubleshoot any problems with the symbol loading
@@ -154,7 +156,7 @@ poi(<addr/symbol>) - dereference a pointer
 Each symbol is treated as an address (the value of a symbol is its memory address).
 To get the value of the symbol held at its address it has to be dereferenced.
 
-? - display regualr commands
+? - display regular commands
 .help - display dot commands
 .help a* - display dot commands starting with a
 ? <expression> - evaluate an expression
@@ -171,7 +173,7 @@ x *! - list all modules
 x ntdll!*  - list all symbols of ntdll
 x kernel23!*LoadLibrary* - list all symbols containing LoadLibrary
 
-ln <address> - list symbols near that address. Alsho displays their addresses
+ln <address> - list symbols near that address. Also displays their addresses
 
 lm[Option] - list modules
    v - verbose
