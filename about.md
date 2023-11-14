@@ -3,6 +3,10 @@ layout: page
 title: About
 description: "About me and the purpose of this blog"
 ---
-Just a guy interested in infosec. This blog is mainly to write down the things I learn, because when you try to explain something you can see if you truly understand it. 
+Currently working as Security Researcher, focusing on threat research, malware analysis, developing static and behavioural anti-malware signatures for AV and EDR. My past experience is as Security Analyst where I was involved in incident response, digital forensics and security monitoring. Also performed penetration tests on occasion.
 
-Also I'm no expert, but most importantly I'm human, so I make mistakes. If you spot something that's wrong or have recommendations I'll greatly appreciate it if you tell me. To contact me, you can write a comment or use the contact page.
+My interests are in blue team activities like malware analysis, digital forensics, threat research, although sometimes I also find interest in offensive research.
+
+In my blog I write down the things I learn, because when you try to explain something you can see if you truly understand it. 
+
+I greatly appreciate any feedback about the articles :)
