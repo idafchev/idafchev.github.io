@@ -102,7 +102,6 @@ This is the new Windbg with modern GUI and new features
 
 3.6.1. If using network communication, go to `File > Attach to kernel > Net` and fill in the key and port number  
 3.6.2. If using named pipes, go to `File > Attach to kernel > COM`, fill in the pipe name we chose for the Serial Port in the port filed and the same Baud Rate  
-https://www.dnevnik.bg/tehnologii/2023/06/01/4490573_na_purva_sudebna_instanciia_asociaciia_izdeistva/
 ![windbg_config](/images/kernel_debugging/kernel_debugging_5.png)  
 
 3.7. Click OK and Windbg should start waiting for connection  
