@@ -21,7 +21,9 @@ title:  "Malware analysis of EKANS ransomware"
 [4. Recommendations](#4_recommendations)  
 [5. References](#5_references)  
 
-# <a name="1_summary"></a> 1. Summary
+# <a name="1_summary"></a> 1. Summary  
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/EKANS_analysis/)  
+
 EKANS malware is a ransomware which was first detected in December 2019 and while ransomware attacks are nothing new, EKANS had a functionality which made it stand out. In the list of processes, that it tries to terminate, there were some which are related to Industrial Control Systems (ICS).[1]  
 
 During the security incidents last month, that hit the news, about the EKANS Ransomware, I decided to look at the inner workings of the malware and share my findings with the security community. My analysis was part of a research done in our [ASOC](https://www.tbs.tech/product/asoc/) team, part of [TBS](https://www.tbs.tech)
