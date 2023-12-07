@@ -13,6 +13,8 @@ title:  "Environment Setup for Windows Kernel Debugging with Windbg"
 [5. References](#5_references)  
 
 # <a name="1_introduction"></a> 1. Introduction
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/Windows_Kernel_Debugging/)  
+
 In this blog post, I will describe how to set up an environment for kernel debugging in Windows and provide a WinDbg command cheatsheet.  
 I will reference some commands in subsequent posts to avoid repeating explanations.  
 
