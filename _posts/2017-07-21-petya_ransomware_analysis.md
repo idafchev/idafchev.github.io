@@ -7,6 +7,8 @@ title:  "Petya/NotPetya Ransomware Analysis"
 author: "Iliya Dafchev"
 ---
 
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/petya_ransomware_analysis/)  
+
 I got the sample from [theZoo](https://github.com/ytisf/theZoo). I don't know if this is an actual sample caught "in the wild", but for my surprise it wasn't packed or had any advanced anti-RE tricks. I guess ransomware writers just want a quick profit. 
 
 When I started the analysis (a few weeks ago), I didn't know much about how Petya works, so this whole analysis is my own. Probably I've got some things wrong, it's my first malware analysis and I'm doing it as a learning experience.
