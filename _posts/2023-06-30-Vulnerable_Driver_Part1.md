@@ -13,7 +13,9 @@ title:  "Exploring the Windows kernel using vulnerable driver - Part 1"
 [5. Interacting with RTCore64](#5_interacting)  
 [6. References](#6_references)  
 
-# <a name="1_introduction"></a> 1. Introduction
+# <a name="1_introduction"></a> 1. Introduction  
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/Vulnerable_Driver_Part1/)  
+
 I got really curious about how those tools that bypass security software with a driver actually work. So, I decided to dig into the source code of some popular ones like PPLKiller, PPLControl, and others that take advantage of the CVE-2019-16098 vulnerability in the MSI Afterburner driver. However, I have always found hands-on practice to be the most effective way for me to comprehend complex concepts, so even though I'm a blue teamer, I thought it would be interesting to rewrite the code from scratch, using their code as a reference, and add some extra functionality to see if I really understood it all.  
 
 I won't be sharing the complete source code or any compiled binaries. This is purely for educational purposes, and let's be honest, there are already enough offensive tools out there.  
