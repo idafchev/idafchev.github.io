@@ -6,6 +6,8 @@ description: "Microsfot fixed their detection logic, so this doesn't work anymor
 title:  "Office 365 AMSI Bypass (fixed)"
 ---
 # Introduction
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/office365_amsi_bypass/)  
+
 While I was playing around with the publicly available AMSI bypass PoCs for powershell I got curious if such bypass was available for Office 365. Google didn't show anything useful, so that's when I decided to try and port one of the powershell PoCs to VBA macro and see if it works.
 
 If you aren't familiar with AMSI and the way to "bypass" it, I recommend reading the following resources first (in this order):
