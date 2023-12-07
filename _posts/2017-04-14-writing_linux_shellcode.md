@@ -8,6 +8,7 @@ author: "Iliya Dafchev"
 ---
 
 ## Introduction
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/writing_linux_shellcode/)  
 
 A few weeks ago I wrote my first shellcode, so I'm definately not an expert in shellcode writing, but I want to write down and explain what I've learned.
 I think that the best way to see if you really understand something is to try and teach it to someone.
