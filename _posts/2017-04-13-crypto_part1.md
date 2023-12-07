@@ -8,6 +8,8 @@ author: "Iliya Dafchev"
 ---
 
 # Introduction
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/crypto_part1/)  
+
 In the Crypto series of posts I'll try to explain different encryption algorithms, implement them in code and then try to break them. They're also writeups for the [cryptopals](http://cryptopals.com/) crypto challenges and I recommend trying to solve them youtself before reading this and other crypto posts.
 
 I'm not a cryptographer, nor  am I an expert in programming! The purpose of these posts (and the blog in general) is for me to write down what I've learned so it can be useful to others (and for others to point out my mistakes!).
