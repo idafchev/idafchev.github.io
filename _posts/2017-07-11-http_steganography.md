@@ -7,6 +7,8 @@ title:  "HTTP Steganography PoC"
 author: "Iliya Dafchev"
 ---
 
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/http_steganography/)  
+
 I wrote a proof of concept for hiding and transfering data in the HTTP headers. I don't know if it's a unique idea (probably not), but I think it's an interesting one (although not very efficient) and I wanted to implement it.
 
 You can find the source code [here](https://github.com/idafchev/stego_http).
