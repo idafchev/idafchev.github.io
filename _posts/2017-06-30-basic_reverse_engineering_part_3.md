@@ -8,6 +8,7 @@ author: "Iliya Dafchev"
 ---
 
 # Introduction
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/basic_reverse_engineering_part_3/)  
 
 I've started a course on [Modern Binary Exploitation](http://security.cs.rpi.edu/courses/binexp-spring2015/) and throughout this course there are challenges and labs with which to practice exploitation techniques. It starts with an introduction to reverse engineering and I've decided to write about how I solved the challenges and take notes of the things I learned.
 
