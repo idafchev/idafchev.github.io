@@ -24,6 +24,9 @@ author: "Iliya Dafchev"
 [Snort rule](#snort_rule)  
 [Indicators of Compromise](#ioc)  
 
+
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/malware_analysis/)  
+
 This time I wanted to analyse an obfuscated and/or encrypted malware. I chose a [random sample from malwr.com](https://malwr.com/analysis/MzgyYzFkMThiMTM2NDQ3NDk5ZjMwNTQ1YjQ4MDYzODc/) and luckily it was exactly what I was looking for (well, almost...). 
 
 The malware is a MS Word document, which means the attack vector is probably email.
