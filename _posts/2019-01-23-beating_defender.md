@@ -6,6 +6,8 @@ description: "A research on why the new defender evasion modules fail to evade"
 title:  "Beating Windows Defender. Analysis of Metasploit's new evasion modules."
 ---
 # Introduction
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/beating_defender/)  
+
 Recently my colleague Alexander Tzokev wrote in his blog [tzokev.com](http://www.tzokev.com/) about the new evasion modules in Metasploit v5 and how they fail at their job of... evading. I wanted to analyze the resulting binaries and see if there's something interesting on the assembly level that might be triggering a signature. This research is based on Alexander's post, but because I want it to be stand-alone, I'll have to repeat some of his findings first. 
 
 # Installing Metasploit v5
