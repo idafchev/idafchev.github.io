@@ -12,6 +12,8 @@ title:  "Exploring the Windows kernel using vulnerable driver - Part 2"
 [4. References](#4_references)  
 
 # <a name="1_introduction"></a> 1. Introduction  
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/Vulnerable_Driver_Part2/)  
+
 Welcome back to my blog series on exploring the Windows kernel with a vulnerable driver! The previous part discussed how Windows drivers function and explained how the MSI Afterburner driver vulnerability works. Now, this second part, will explore how this vulnerability can be exploited for activities like privilege escalation and other harmful actions.  
 
 Again, I want to emphasize that the purpose of this blog post is purely educational, therefore I will give only snippets of code as an example and will not share complete source code.  
