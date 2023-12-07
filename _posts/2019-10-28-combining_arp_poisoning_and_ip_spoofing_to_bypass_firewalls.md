@@ -6,6 +6,8 @@ description: "A specific case of bypassing a firewall"
 title:  "Combining ARP poisoning and IP spoofing to bypass firewalls"
 ---
 # Introduction
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/combining_arp_poisoning_and_ip_spoofing_to_bypass_firewalls/)  
+
 Recently a colleague of mine and I had to test if there was a way to gain access to a specific network segment (let's call it SecNet) from another network (BadNet). Of course the most basic attempts with ping and port scanning failed, because the firewall blocked everything that came from our segment, so we had to find a way to bypass the firewall. 
 
 One of the devices available in BadNet was a DNS server and this server was configured as the primary DNS in the DHCP settings. We also confirmed that other networks also used this server as their DNS, thus our hypothesis was that maybe the devices from SecNet also used the same server as their DNS. If that was the case and the firewall wasn't configured to be restrictive enough, then the DNS server should have access to the SecNet network.
