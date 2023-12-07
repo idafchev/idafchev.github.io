@@ -11,6 +11,8 @@ title:  "Linux enumeration with read access only"
 [Default paths of configuration files](#config_files)  
 
 # <a name="introduction"></a> Introduction
+[I moved this article to my new blog. Click here to read it there.](https://idafchev.github.io/blog/linux_proc_enum/)  
+
 If attackers exploit a vulnerability that gives them the ability to read arbitrary files from a remote system, they must count on default locations of configuration files to enumerate the system. They can't execute commands or list the files inside the directories and their permissions. 
 
 An example of such attack is XML External Entity (XXE) vulnerability, which could lead to disclosure of local files. The example below shows XXE exploit to read /etc/passwd file.  
